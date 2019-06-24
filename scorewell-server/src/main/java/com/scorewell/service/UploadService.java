@@ -28,10 +28,9 @@ public class UploadService {
 			if (file.isEmpty()) {
 				continue;
 			}
-
 			String basePathOfClass = new File(".").getAbsolutePath();
 			byte[] bytes = file.getBytes();
-			Path path = Paths.get(basePathOfClass+PDF_SOURCE+fileDir + fileSubName +"_"+ file.getOriginalFilename());
+			Path path = Paths.get(basePathOfClass+PDF_SOURCE+fileDir + fileSubName + file.getOriginalFilename());
 			Files.write(path, bytes);
 
 		}

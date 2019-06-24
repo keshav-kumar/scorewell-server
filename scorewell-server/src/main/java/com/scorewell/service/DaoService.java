@@ -417,6 +417,9 @@ public class DaoService {
 		if (documents != null) {
 			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
 					.collect(Collectors.toList());
+			
+		System.out.println(request.getParameter("name")+"YOOOOO....."+documents.size());
+			
 			return list;
 		}
 		
@@ -426,12 +429,20 @@ public class DaoService {
 	public List<UserActivity> getUserActivityAdmin(HttpServletRequest request) {
 		
 		Map<String, Object> queryParam = new HashMap<>();
-		if(!request.getParameter("name").isEmpty())
+		
+		if(request.getParameter("name") != null )
 			queryParam.put("userName", request.getParameter("name"));
-		if(!request.getParameter("email").isEmpty())
+		if(request.getParameter("email") != null)
 			queryParam.put("emailId", request.getParameter("email"));
-		if(!request.getParameter("phone").isEmpty())
+		if(request.getParameter("phone") != null)
 			queryParam.put("phone", request.getParameter("phone"));
+		
+//		if(!request.getParameter("name").isEmpty())
+//			queryParam.put("userName", request.getParameter("name"));
+//		if(!request.getParameter("email").isEmpty())
+//			queryParam.put("emailId", request.getParameter("email"));
+//		if(!request.getParameter("phone").isEmpty())
+//			queryParam.put("phone", request.getParameter("phone"));
 		
 		Map<String, Object> sortmap = new HashMap<>();
 		sortmap.put("uploadDateTime", -1);
@@ -506,18 +517,52 @@ public class DaoService {
 		return urls;
 	}
 	
+	public List<UserActivity> getUserActivityAdminTest(String userName, String emailId, String phone) {
+		
+		MongoDBManager mongoDBManager = new MongoDBManager("localhost", "score_well");
+		
+		Map<String, Object> queryParam = new HashMap<>();
+//		if(!userName.isEmpty())
+			queryParam.put("userName", userName);
+//		if(!emailId.isEmpty())
+			queryParam.put("emailId", emailId);
+//		if(!phone.isEmpty())
+			queryParam.put("phone", phone);
+		
+		Map<String, Object> sortmap = new HashMap<>();
+		sortmap.put("uploadDateTime", -1);
+		List<Document> documents = mongoDBManager.getObjects(USER_ACTIVITY, 0, -1, queryParam, sortmap);
+		
+		if (documents != null) {
+			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
+					.collect(Collectors.toList());
+			return list;
+		}
+		
+		return null;
+	}
+	
 //	public static void main(String[] str) {
+//		
+//		DaoService daoService = new DaoService();
+//		List<UserActivity> list= daoService.getUserActivityAdminTest("abra", "9898989812", "dbra@kabra.com");
+//		
+//		System.out.println(list.size());
+//		
+//		for(UserActivity actv:list) {
+//			System.out.println("Name : "+actv.getUserName()+"  "+actv.getPhone()+" "+actv.getEmailId());
+//		}
 //		
 ////		long currentTime = StringUtils
 ////				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
 ////		System.out.println(currentTime);
 ////		
-//		System.out.println(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"));
-//		
-//		DaoService daoService = new DaoService();
-//		List<QuestionSet> questionSets= daoService.getQuestionSet("IAS", "ga");
-//		
-//		List<String> urls = daoService.getUrlsFromWebpageData();
+////		System.out.println(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"));
+////		
+////		DaoService daoService = new DaoService();
+////		List<QuestionSet> questionSets= daoService.getQuestionSet("IAS", "ga");
+////		
+////		List<String> urls = daoService.getUrlsFromWebpageData();
 //
 ////		List<String> urls = new ArrayList<>();
 ////		if(urls!=null) {

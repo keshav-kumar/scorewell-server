@@ -82,7 +82,7 @@ public class DataHandler {
 		}
 		String questionsetId = questionSetService.createQuestionSet(request, uploadfile.getOriginalFilename());
 		try {
-			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), uploadfile.getOriginalFilename(), "question/");
+			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), "", "question/");
 
 		} catch (IOException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -107,7 +107,7 @@ public class DataHandler {
 		try {
 
 			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile),
-					request.getParameter("phone")+"_"+request.getParameter("email"), "answer/");
+					request.getParameter("phone")+"_"+request.getParameter("email")+"_", "answer/");
 
 		} catch (IOException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
