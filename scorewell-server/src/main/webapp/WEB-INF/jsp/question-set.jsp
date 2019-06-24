@@ -26,16 +26,18 @@
 		<div class="one_half first">
 			<h2 class="heading">
 				<font color="red"><B>Question Set : ${questionSet.setName}</B></font>
-				<a href="pdf/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
+				<a href="pdf/question/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
 			</h2>
 		</div>
 		</section>
 		
 		<div class="wrapper content">
 			<section id="cta" class="clear"> 
-				<c:forEach var="question" items="${queSet.questions}">
-					<h1>${question}</h1>
-				</c:forEach> 
+				<ol>
+					<c:forEach var="question" items="${queSet.questions}">
+						<li><h1>${question}</h1></li>
+					</c:forEach> 
+				</ol>
 			</section>
 		</div>
 		

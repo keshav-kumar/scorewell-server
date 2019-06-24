@@ -91,7 +91,7 @@
 								<header>
 									<address>
 					                	${queSetDesc.releaseDate} <a href="/question-set?set-name=${queSetDesc.setName}" target="_blank">${queSetDesc.setName}</a>
-					                	<a href="pdf/${queSetDesc.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
+					                	<a href="pdf/question/${queSetDesc.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
 									</address>
 								</header> 
 							</article></li>

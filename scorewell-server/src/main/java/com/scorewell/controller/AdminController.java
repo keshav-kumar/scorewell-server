@@ -54,6 +54,16 @@ public class AdminController {
 
 		return new ModelAndView("subscribers");
 	}
+	
+	@RequestMapping(value = { "/admin" })
+	public ModelAndView adminPageController(HttpServletRequest request, HttpServletResponse response,
+			Model model) {
+
+		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
+		model.addAttribute("answerSheet", listAnswerSheet);
+		
+		return new ModelAndView("admin-questions");
+	}
 
 	@RequestMapping(value = { "/create-question" })
 	public ModelAndView createQuestionPageController(HttpServletRequest request, HttpServletResponse response,
@@ -62,14 +72,14 @@ public class AdminController {
 		return new ModelAndView("create_question");
 	}
 	
-	@RequestMapping(value = { "/list-answer-sheet" })
+	@RequestMapping(value = { "/reviewing-answer-list" })
 	public ModelAndView answerSheetPageController(HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
 		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
 		model.addAttribute("answerSheet", listAnswerSheet);
 		
-		return new ModelAndView("setList");
+		return new ModelAndView("review-page");
 	}
 
 }
