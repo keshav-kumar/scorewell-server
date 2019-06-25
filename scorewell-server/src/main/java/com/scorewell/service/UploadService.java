@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -16,13 +18,16 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploadService {
 
 	private static String PDF_SOURCE = "/src/main/webapp/WEB-INF/pdf/";
-	
+	private static String QUESTION = "question/";
+	private static String ANSWER = "answer/";
+	private static String REVIEW = "review/";
+
 	@Autowired
-    private Environment env;
+	private Environment env;
 
-	public void saveUploadedPdfFiles(List<MultipartFile> files, String fileSubName, String fileDir) throws IOException {
+	public void saveUploadedPdfFiles(List<MultipartFile> files, HttpServletRequest request, String uploadType)
+			throws IOException {
 
-		
 		for (MultipartFile file : files) {
 
 			if (file.isEmpty()) {
@@ -30,7 +35,18 @@ public class UploadService {
 			}
 			String basePathOfClass = new File(".").getAbsolutePath();
 			byte[] bytes = file.getBytes();
-			Path path = Paths.get(basePathOfClass+PDF_SOURCE+fileDir + fileSubName + file.getOriginalFilename());
+
+			String subDir_fileName = "";
+			if (uploadType.equals("Q"))
+				subDir_fileName = QUESTION + file.getOriginalFilename();
+			else if (uploadType.equals("A"))
+				subDir_fileName = ANSWER + request.getParameter("phone") + "_" + request.getParameter("email") + "_"
+						+ request.getParameter("fileName");
+			else if (uploadType.equals("R"))
+				subDir_fileName = REVIEW + request.getParameter("phone") + "_" + request.getParameter("email") + "_"
+						+ request.getParameter("fileName");
+
+			Path path = Paths.get(basePathOfClass + PDF_SOURCE + subDir_fileName);
 			Files.write(path, bytes);
 
 		}

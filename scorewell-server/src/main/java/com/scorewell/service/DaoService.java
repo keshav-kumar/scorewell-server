@@ -430,19 +430,12 @@ public class DaoService {
 		
 		Map<String, Object> queryParam = new HashMap<>();
 		
-		if(request.getParameter("name") != null )
+		if(request.getParameter("name") != null && !request.getParameter("name").isEmpty())
 			queryParam.put("userName", request.getParameter("name"));
-		if(request.getParameter("email") != null)
+		if(request.getParameter("email") != null && !request.getParameter("email").isEmpty())
 			queryParam.put("emailId", request.getParameter("email"));
-		if(request.getParameter("phone") != null)
+		if(request.getParameter("phone") != null && !request.getParameter("phone").isEmpty())
 			queryParam.put("phone", request.getParameter("phone"));
-		
-//		if(!request.getParameter("name").isEmpty())
-//			queryParam.put("userName", request.getParameter("name"));
-//		if(!request.getParameter("email").isEmpty())
-//			queryParam.put("emailId", request.getParameter("email"));
-//		if(!request.getParameter("phone").isEmpty())
-//			queryParam.put("phone", request.getParameter("phone"));
 		
 		Map<String, Object> sortmap = new HashMap<>();
 		sortmap.put("uploadDateTime", -1);
@@ -451,6 +444,8 @@ public class DaoService {
 		if (documents != null) {
 			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
 					.collect(Collectors.toList());
+			
+			System.out.println(list.size());
 			return list;
 		}
 		
@@ -464,7 +459,6 @@ public class DaoService {
 		queryParam.put("deleted", false);
 
 		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, queryParam);
-		System.out.println("Mongo Result : "+documents.size());
 		if (documents != null) {
 			List<QuestionSet> list = documents.stream().map(o -> getDocToClass(o, QuestionSet.class))
 					.collect(Collectors.toList());

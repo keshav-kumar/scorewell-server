@@ -55,7 +55,7 @@ public class QuestionSetService {
 		userActivity.setPhone(request.getParameter("phone"));
 		userActivity.setCourse(request.getParameter("course"));
 		userActivity.setSetName(request.getParameter("setName"));
-		userActivity.setFileName(pdfFileName);
+		userActivity.setFileName(request.getParameter("fileName"));
 		userActivity.setFilePath(fileDir);
 		userActivity.setEvaluated(false);
 		userActivity.setUploadDateTime(System.currentTimeMillis());

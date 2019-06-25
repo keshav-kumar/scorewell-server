@@ -27,7 +27,7 @@
 			<!-- ################################################################################################ -->
 			<div class="sdb_holder">
 				<h6>Evaluated Answer Sheets</h6>
-				<form action="/set-list" method="get">
+				<form action="/reviewing-answer-list" method="get">
 					<div>
 						<label for="name">Name<span>*</span></label> <input
 							type="text" name="name" id="name" value="" size="22">
@@ -64,11 +64,11 @@
 								<thead>
 									<tr>
 										<th>User Name</th>
-						              <th>Set Name</th>
-						              <th>Submitted Asnwer</th>
-						              <th>Reviewed</th>
+										<th>Set Name</th>
+						              	<th>Submit Answer</th>
+						              	<th>Reviewed</th>
 						            </tr>
-						            <c:forEach var="answerSheet" items="${sets}">
+						            <c:forEach var="sets" items="${answerSheet}">
 				            			<tr>
 				            				<td>${sets.userName}</td>
 							              	<td>${sets.setName}</td>

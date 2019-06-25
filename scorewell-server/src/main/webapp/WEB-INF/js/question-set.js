@@ -19,12 +19,16 @@ function fire_ajax_submit() {
     var name = $('#name').val();
     var phone = $('#phone').val();
     var email = $('#email').val();
+    var fileName = $('#fileName').val();
+    
+    alert("Set Name : "+setName);
     
     var data = new FormData(form);
     
 	data.append("name", name);
 	data.append("phone", phone);
 	data.append("email", email);
+	data.append("fileName", fileName);
 
     if(name ==="" || phone === "" || email === ""){
     	$("#result").text("please fille the data.");
