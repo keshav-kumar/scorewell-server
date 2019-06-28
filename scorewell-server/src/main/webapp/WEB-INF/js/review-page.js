@@ -1,16 +1,19 @@
 $(document).ready(function () {
 
     $("#submit").click(function (event) {
+
+        //stop submit the form, we will post it manually.
         event.preventDefault();
-        upload_answer();
+
+        submit_reviewed_sheet();
+
     });
 
 });
 
-function upload_answer() {
-
-    // Get form
-    var form = $('#fileUploadForm')[0];
+function submit_reviewed_sheet() {
+	
+	var form = $('#fileUploadForm')[0];
 
     var name = $('#name').val();
     var phone = $('#phone').val();
@@ -23,12 +26,8 @@ function upload_answer() {
 	data.append("phone", phone);
 	data.append("email", email);
 	data.append("fileName", fileName);
-
-    if(name ==="" || phone === "" || email === ""){
-    	$("#result").text("please fille the data.");
-    }else{
     
-    $.ajax({
+	$.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
         url: '/sw/api/upload-answer',
@@ -53,7 +52,4 @@ function upload_answer() {
 
         }
     });
-    
-    }
-
 }

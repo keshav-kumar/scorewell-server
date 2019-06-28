@@ -45,7 +45,7 @@
 							type="text" name="phone" id="phone" value="" size="22">
 					</div>
 					<div>
-						&nbsp;<label for="email">Mail <span>*</span></label> <input type="text"
+						&nbsp;<label for="email">Email <span>*</span></label> <input type="text"
 							name="email" id="email" value="" size="22">
 					</div>
 					<div>

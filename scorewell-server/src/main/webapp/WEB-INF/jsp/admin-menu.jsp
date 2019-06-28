@@ -47,7 +47,7 @@
 					<li><a href="/home">Home</a></li>
 					<li><a href="/admin">Admin</a></li>
 					<li><a href="/create-question">Create Set</a></li>
-					<li><a href="/reviewing-answer-list">Review Answers</a></li>
+					<li><a href="/admin-answer-list">Review Answers</a></li>
 				</ul>
 			</nav>
 			<div id="search" class="fl_right">

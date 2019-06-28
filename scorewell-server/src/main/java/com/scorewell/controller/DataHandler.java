@@ -103,10 +103,34 @@ public class DataHandler {
 			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
 		}
 
-		String questionsetId = questionSetService.saveUserActivity(request, env.getProperty("upload.answer.dir"), uploadfile.getOriginalFilename());
+		String questionsetId = questionSetService.saveUserActivity(request, env.getProperty("upload.answer.dir"));
 		try {
 
 			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "A");
+
+		} catch (IOException e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+
+		return new ResponseEntity("Successfully uploaded - " + uploadfile.getOriginalFilename(), new HttpHeaders(),
+				HttpStatus.OK);
+
+	}
+	
+	@PostMapping("/api/reviewed-upload")
+	public ResponseEntity<?> uploadReviewed(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("file") MultipartFile uploadfile) {
+
+		logger.debug("Reviewed answer uploading.");
+
+		if (uploadfile.isEmpty()) {
+			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
+		}
+
+		questionSetService.updateUserActivity(request);
+		
+		try {
+			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "R");
 
 		} catch (IOException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

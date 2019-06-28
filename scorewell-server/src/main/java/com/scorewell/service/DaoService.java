@@ -375,6 +375,20 @@ public class DaoService {
 		return userActivityId;
 	}
 	
+	public void updateUserActivity(HttpServletRequest request) {
+		
+		Map<String, Object> query = new HashMap<>();
+		query.put("userName", request.getParameter("name"));
+		query.put("emailId", request.getParameter("email"));
+		query.put("phone", request.getParameter("phone"));
+		query.put("setName", request.getParameter("setName"));
+		
+		Map<String, Object> fieldMap = new HashMap<>();
+		fieldMap.put("evaluated", true);
+		mongoDBManager.setField(USER_ACTIVITY, query, fieldMap);
+		
+	}
+	
 	public List<QuestionSet> getQuestionSet(String course) {
 
 		Map<String, Object> queryParam = new HashMap<>();
@@ -418,8 +432,6 @@ public class DaoService {
 			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
 					.collect(Collectors.toList());
 			
-		System.out.println(request.getParameter("name")+"YOOOOO....."+documents.size());
-			
 			return list;
 		}
 		
@@ -445,7 +457,6 @@ public class DaoService {
 			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
 					.collect(Collectors.toList());
 			
-			System.out.println(list.size());
 			return list;
 		}
 		
@@ -511,61 +522,56 @@ public class DaoService {
 		return urls;
 	}
 	
-	public List<UserActivity> getUserActivityAdminTest(String userName, String emailId, String phone) {
+	public void updateTest(boolean status) {
 		
 		MongoDBManager mongoDBManager = new MongoDBManager("localhost", "score_well");
 		
-		Map<String, Object> queryParam = new HashMap<>();
-//		if(!userName.isEmpty())
-			queryParam.put("userName", userName);
-//		if(!emailId.isEmpty())
-			queryParam.put("emailId", emailId);
-//		if(!phone.isEmpty())
-			queryParam.put("phone", phone);
+		Map<String, Object> query = new HashMap<>();
+		query.put("userName", "kes");
+		query.put("emailId", "keshav.softengg");
+		query.put("phone", "12345");
+		query.put("setName", "dhing chak");
 		
-		Map<String, Object> sortmap = new HashMap<>();
-		sortmap.put("uploadDateTime", -1);
-		List<Document> documents = mongoDBManager.getObjects(USER_ACTIVITY, 0, -1, queryParam, sortmap);
+		Map<String, Object> fieldMap = new HashMap<>();
+		fieldMap.put("evaluated", status);
+		mongoDBManager.setField(USER_ACTIVITY, query, fieldMap);
 		
-		if (documents != null) {
-			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
-					.collect(Collectors.toList());
-			return list;
-		}
-		
-		return null;
 	}
 	
 //	public static void main(String[] str) {
 //		
 //		DaoService daoService = new DaoService();
-//		List<UserActivity> list= daoService.getUserActivityAdminTest("abra", "9898989812", "dbra@kabra.com");
-//		
+//		daoService.updateTest(false);
+//	}
+	
+	
+//	{
+////		
 //		System.out.println(list.size());
-//		
-//		for(UserActivity actv:list) {
-//			System.out.println("Name : "+actv.getUserName()+"  "+actv.getPhone()+" "+actv.getEmailId());
-//		}
-//		
-////		long currentTime = StringUtils
-////				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
-////		System.out.println(currentTime);
 ////		
-////		System.out.println(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"));
-////		
-////		DaoService daoService = new DaoService();
-////		List<QuestionSet> questionSets= daoService.getQuestionSet("IAS", "ga");
-////		
-////		List<String> urls = daoService.getUrlsFromWebpageData();
-//
-////		List<String> urls = new ArrayList<>();
-////		if(urls!=null) {
-////			for(String d:urls) {
-////				
-////				System.out.println(d);
-////			}
+////		for(UserActivity actv:list) {
+////			System.out.println("Name : "+actv.getUserName()+"  "+actv.getPhone()+" "+actv.getEmailId());
 ////		}
-//		
+////		
+//////		long currentTime = StringUtils
+//////				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
+//////		System.out.println(currentTime);
+//////		
+//////		System.out.println(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"));
+//////		
+//////		DaoService daoService = new DaoService();
+//////		List<QuestionSet> questionSets= daoService.getQuestionSet("IAS", "ga");
+//////		
+//////		List<String> urls = daoService.getUrlsFromWebpageData();
+////
+//////		List<String> urls = new ArrayList<>();
+//////		if(urls!=null) {
+//////			for(String d:urls) {
+//////				
+//////				System.out.println(d);
+//////			}
+//////		}
+////		
 //	}
 	
 }

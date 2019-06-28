@@ -47,7 +47,7 @@ public class QuestionSetService {
 		return daoService.createQuestionSet(questionSet);
 	}
 	
-	public String saveUserActivity(HttpServletRequest request, String fileDir, String pdfFileName) {
+	public String saveUserActivity(HttpServletRequest request, String fileDir) {
 		
 		UserActivity userActivity = new UserActivity();
 		userActivity.setUserName(request.getParameter("name"));
@@ -64,6 +64,12 @@ public class QuestionSetService {
 		String userActivityId = daoService.saveUserActivity(userActivity);
 		
 		return userActivityId;
+	}
+	
+	public void updateUserActivity(HttpServletRequest request) {
+		
+		daoService.updateUserActivity(request);
+		
 	}
 
 }

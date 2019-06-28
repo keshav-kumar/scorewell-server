@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonObject;
+import com.scorewell.dto.QuestionSet;
 import com.scorewell.dto.UserActivity;
 import com.scorewell.service.DaoService;
 import com.scorewell.service.UserService;
@@ -59,8 +60,8 @@ public class AdminController {
 	public ModelAndView adminPageController(HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
-		model.addAttribute("answerSheet", listAnswerSheet);
+		List<QuestionSet> questionSets = daoService.getQuestionSet("IAS");
+		model.addAttribute("questionSets", questionSets);
 		
 		return new ModelAndView("admin-questions");
 	}
@@ -72,14 +73,27 @@ public class AdminController {
 		return new ModelAndView("create_question");
 	}
 	
-	@RequestMapping(value = { "/reviewing-answer-list" })
+	@RequestMapping(value = { "/admin-answer-list" })
 	public ModelAndView answerSheetPageController(HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
 		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
 		model.addAttribute("answerSheet", listAnswerSheet);
 		
-		return new ModelAndView("review-page");
+		return new ModelAndView("admin-answer-page");
+	}
+	
+	@RequestMapping(value = { "/upload-review" })
+	public ModelAndView uploadReviewPageController(HttpServletRequest request, HttpServletResponse response,
+			Model model) {
+
+		
+		System.out.println("Name : "+request.getParameter("userName"));
+		
+		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
+		model.addAttribute("userAnswerSheet", listAnswerSheet.get(0));
+		
+		return new ModelAndView("upload-review-page");
 	}
 
 }

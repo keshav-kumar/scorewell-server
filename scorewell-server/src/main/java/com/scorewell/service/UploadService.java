@@ -20,7 +20,7 @@ public class UploadService {
 	private static String PDF_SOURCE = "/src/main/webapp/WEB-INF/pdf/";
 	private static String QUESTION = "question/";
 	private static String ANSWER = "answer/";
-	private static String REVIEW = "review/";
+	private static String REVIEW = "reviewed/";
 
 	@Autowired
 	private Environment env;
@@ -45,6 +45,8 @@ public class UploadService {
 			else if (uploadType.equals("R"))
 				subDir_fileName = REVIEW + request.getParameter("phone") + "_" + request.getParameter("email") + "_"
 						+ request.getParameter("fileName");
+			
+			System.out.println("Sub DIR : "+basePathOfClass + PDF_SOURCE + subDir_fileName);
 
 			Path path = Paths.get(basePathOfClass + PDF_SOURCE + subDir_fileName);
 			Files.write(path, bytes);

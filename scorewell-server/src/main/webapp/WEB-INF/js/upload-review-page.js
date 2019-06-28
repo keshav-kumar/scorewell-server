@@ -1,37 +1,36 @@
 $(document).ready(function () {
 
     $("#submit").click(function (event) {
+
         event.preventDefault();
-        upload_answer();
+        upload_review();
+
     });
 
 });
 
-function upload_answer() {
+function upload_review() {
 
     // Get form
     var form = $('#fileUploadForm')[0];
 
-    var name = $('#name').val();
+    var name = $('#userName').val();
     var phone = $('#phone').val();
-    var email = $('#email').val();
-    var fileName = $('#fileName').val();
+    var email = $('#emailId').val();
+    var setName = $('#setName').val();
+    var uploadFileName = $('#fileName').val();
     
     var data = new FormData(form);
     
 	data.append("name", name);
 	data.append("phone", phone);
 	data.append("email", email);
-	data.append("fileName", fileName);
-
-    if(name ==="" || phone === "" || email === ""){
-    	$("#result").text("please fille the data.");
-    }else{
+	data.append("fileName", uploadFileName);
     
     $.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
-        url: '/sw/api/upload-answer',
+        url: '/sw/api/reviewed-upload',
         data: data,
         
         processData: false,
@@ -54,6 +53,4 @@ function upload_answer() {
         }
     });
     
-    }
-
 }

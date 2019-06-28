@@ -37,7 +37,7 @@
 							type="text" name="phone" id="phone" value="" size="22">
 					</div>
 					<div>
-						&nbsp;<label for="email">Mail <span>*</span></label> <input type="text"
+						&nbsp;<label for="email">Email <span>*</span></label> <input type="text"
 							name="email" id="email" value="" size="22">
 					</div>
 					<div>
@@ -63,12 +63,14 @@
 							<table>
 								<thead>
 									<tr>
-						              <th>Set Name</th>
-						              <th>Submitted Asnwer</th>
-						              <th>Reviewed</th>
+										<th>User Name</th>
+						              	<th>Set Name</th>
+						              	<th>Submitted Asnwer</th>
+						              	<th>Reviewed</th>
 						            </tr>
 						            <c:forEach var="sets" items="${sets}">
 				            			<tr>
+				            				<td>${sets.userName}</td>
 							              	<td>${sets.setName}</td>
 							              	<td>${sets.uploadDateTime} <a href="/pdf/answer/${sets.phone}_${sets.emailId}_${sets.fileName}" target="_blank"><img src="icon/pdf.png" /> </a></td>
 							                  

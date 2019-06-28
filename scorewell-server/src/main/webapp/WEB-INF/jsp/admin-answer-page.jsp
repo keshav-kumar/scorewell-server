@@ -27,7 +27,7 @@
 			<!-- ################################################################################################ -->
 			<div class="sdb_holder">
 				<h6>Evaluated Answer Sheets</h6>
-				<form action="/reviewing-answer-list" method="get">
+				<form action="/admin-answer-list" method="get">
 					<div>
 						<label for="name">Name<span>*</span></label> <input
 							type="text" name="name" id="name" value="" size="22">
@@ -37,11 +37,11 @@
 							type="text" name="phone" id="phone" value="" size="22">
 					</div>
 					<div>
-						&nbsp;<label for="email">Mail <span>*</span></label> <input type="text"
+						&nbsp;<label for="email">Email <span>*</span></label> <input type="text"
 							name="email" id="email" value="" size="22">
 					</div>
 					<div>
-						&nbsp;<input type="submit" value="Submit" id="submit">
+						&nbsp;<input type="submit" value="Submit" id="search">
 						<span id="result"></span>
 					</div>
 				</form>
@@ -76,10 +76,26 @@
 							                  
 						              		<c:choose>
 							              		<c:when test="${sets.evaluated == true }">
-									              	<td>${sets.evaluateDateTime} <a href="/pdf/reviewed/${sets.phone}_${sets.emailId}_${sets.fileName}" target="_blank"><img src="icon/pdf.png" /> </a></td>
+									              	<td>
+									              		<font color="green">Reviewed.</font>
+									              		<a href="/pdf/reviewed/${sets.phone}_${sets.emailId}_${sets.fileName}" target="_blank"><img src="icon/pdf.png" /> </a>
+									              	</td>
 								              	</c:when>
 								              	<c:otherwise>
-										            <td>Review Pending.</td>
+										            <td>
+										            	<form action="/upload-review" method="get">
+											            	<font color="red">Review Pending.</font>
+											            	<input type="hidden" name="userName" id="userName" value="${sets.userName}">
+											            	<input type="hidden" name="phone" id="phone" value="${sets.phone}">
+											            	<input type="hidden" name="emailId" id="emailId" value="${sets.emailId}">
+											            	<input type="hidden" name="setName" id="setName" value="${sets.setName}">
+											            	<input type="hidden" name="fileName" id="fileName" value="${sets.fileName}">
+															<!-- <input type="submit" value="Upload Review" id="submit"> -->
+															<div>
+																&nbsp;<input type="submit" value="Upload Review" id="submit">
+															</div>
+														</form>
+										            </td>
 										         </c:otherwise>
 								              </c:choose>
 						            	</tr>
@@ -103,7 +119,7 @@
 	<!-- ################################################################################################ -->
 	
 	<%@ include file="footer.jsp"%>
-<!-- 	<script src="js/setList.js"></script> -->
+	<!-- <script src="js/review-page.js"></script> -->
 	
 </body>
 </html>

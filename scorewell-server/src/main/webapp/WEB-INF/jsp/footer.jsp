@@ -5,8 +5,7 @@
 			<div class="one_third first">
 				<h6 class="title">Address</h6>
 				<address class="btmspace-15">
-					Score Well<br> Indira Nagar, Circular Road,<br> B. Deoghar, <br> Jharkhand (India)<br>
-					814112
+					Score Well<br>Sector-11<br>Dwarka, New Delhi <br> Delhi (India), 110075
 				</address>
 				<ul class="nospace">
 					<li class="btmspace-10"><span class="fa fa-phone"></span> 8092480750</li>

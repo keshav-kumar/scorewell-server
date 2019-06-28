@@ -4,7 +4,7 @@ $(document).ready(function() {
 	
 	$("#submit").click(function(event) {
 		event.preventDefault();
-		fire_ajax_submit();
+		upload_answer();
 
 	});
 
