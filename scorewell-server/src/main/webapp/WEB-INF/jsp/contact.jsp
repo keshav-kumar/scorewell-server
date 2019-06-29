@@ -9,7 +9,7 @@
 			<div id="breadcrumb" class="clear">
 				<ul>
 					<li><a href="/home">Home</a></li>
-					<li><a href="/career">Career</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
           </div>
           <div class="w-100"></div>
           <div class="col-md-3">
-            <p><span>Address:</span> Indira Nagar, Circular Road, B. Deoghar, Jharkhand (India) 814112</p>
+            <p><span>Address:</span> Sector-11, Dwarka, New Delhi (India), 110075</p>
           </div>
           <div class="col-md-3">
             <p><span>Phone:</span> <a href="tel://1234567920">8092480750</a></p>
@@ -79,9 +79,18 @@
           
           </div>
 
-          <div class="col-md-6 d-flex">
+          <!-- <div class="col-md-6 d-flex">
           	<div id="map" class="bg-white"></div>
-          </div>
+          </div> -->
+          <!--map-->
+	      <div class="col-md-6 d-flex">
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3720.353760396053!2d77.04740723422644!3d28.586505045172988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x19c837b69eeb99cd!2sVyas+Kunj+Apartments!5e0!3m2!1sen!2sin!4v1561822946678!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<span> </span>
+
+			</div>
+			</div>
+	<!--//map-->
         </div>
       </div>
     </section>

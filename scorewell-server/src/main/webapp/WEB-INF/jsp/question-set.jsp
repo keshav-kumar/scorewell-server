@@ -36,7 +36,7 @@
 			<section id="cta" class="clear"> 
 				<ol>
 					<c:forEach var="question" items="${queSet.questions}">
-						<li><h1>${question}</h1></li>
+						<li style="font-size:20px";><h1>${question}</h1></li>
 					</c:forEach> 
 				</ol>
 			</section>

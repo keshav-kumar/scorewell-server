@@ -41,14 +41,14 @@
 		<div class="wrapper content">
 			<section id="cta" class="clear"> 
 			<div id="content">
-				<h2>User details.</h2>
+				<h2>User Details</h2>
 				<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
 					<div class="one_half first">
-						<input name="userName" id="userName" value="${userAnswerSheet.userName}">
-		            	<input name="phone" id="phone" value="${userAnswerSheet.phone}">
-		            	<input name="emailId" id="emailId" value="${userAnswerSheet.emailId}">
-		            	<input name="setName" id="setName" value="${userAnswerSheet.setName}">
-		            	<input type="hidden" id="fileName" value="${userAnswerSheet.fileName}">
+						<input name="userName" id="userName" value="${userAnswerSheet.userName}" size="35" readonly>
+		            	<input name="phone" id="phone" value="${userAnswerSheet.phone}" size="35" readonly>
+		            	<input name="emailId" id="emailId" value="${userAnswerSheet.emailId}" size="35" readonly>
+		            	<input name="setName" id="setName" value="${userAnswerSheet.setName}" size="35" readonly>
+		            	<input type="hidden" id="fileName" value="${userAnswerSheet.fileName}" size="35" readonly>
 					</div>
 					<div class="one_half">
 						<label for="upload">Upload Review<span>*</span></label> 

@@ -29,7 +29,7 @@
 			<section id="cta" class="clear">
 			<h1>Score Well is a premier organization in test preparation and
 				provides quality guidance to students to achieve their academic and
-				career goals. At Score Well, we are dedicated towards your success</h1>
+				career goals. At Score Well, we are dedicated towards your success.</h1>
 
 			<h1>Our mission is to help every student realize their potential
 				& achieve their educational and career goals. We will help you do
