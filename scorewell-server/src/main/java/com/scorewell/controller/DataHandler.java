@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -54,9 +55,10 @@ public class DataHandler {
 	@ResponseBody
 	public String search() {
 
-		List<String> list = daoService.getUrlsFromWebpageData();
+//		List<String> list = daoService.getUrlsFromWebpageData();
+		String setName = daoService.getLatestQuestionSetName("IAS", "Agri");
 
-		return new Gson().toJson(list);
+		return new Gson().toJson(setName);
 	}
 
 	@RequestMapping(value = { "/save-subscriber" })
@@ -91,6 +93,14 @@ public class DataHandler {
 		return new ResponseEntity("Successfully uploaded - " + uploadfile.getOriginalFilename(), new HttpHeaders(),
 				HttpStatus.OK);
 
+	}
+	
+
+	@RequestMapping(value = { "/api/delete-question-set" })
+	public @ResponseBody JsonObject deleteQuestionSetController(@RequestParam String setname) {
+
+		System.out.println("Deleting QueSet : "+setname);
+		return questionSetService.deleteAdditionInsured(setname);
 	}
 
 	@PostMapping("/api/upload-answer")

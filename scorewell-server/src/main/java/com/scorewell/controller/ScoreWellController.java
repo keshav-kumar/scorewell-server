@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonObject;
 import com.scorewell.service.DaoService;
+import com.scorewell.service.ScorewellService;
 import com.scorewell.service.UserService;
 import com.scorewell.db.MongoDBManager;
 import com.scorewell.dto.QuestionSet;
@@ -34,6 +35,7 @@ public class ScoreWellController {
 	@Autowired
 	private MongoDBManager mongoDBManager;
 	
+	@Autowired private ScorewellService scorewellService;
 	@Autowired private DaoService daoService;
 
 	@RequestMapping(value = { "/", "/home" })
@@ -83,7 +85,7 @@ public class ScoreWellController {
 	public ModelAndView questionSetPageController(HttpServletRequest request, HttpServletResponse response, Model model) {
 		System.out.println(request.getParameter("set-name"));
 		
-		QuestionSet questionSet = daoService.getQuestionSetByName(request.getParameter("set-name"));
+		QuestionSet questionSet = scorewellService.getQuestionSetByName(request.getParameter("set-name"));
 		model.addAttribute("questionSet", questionSet);
 		
 		return new ModelAndView("question-set");

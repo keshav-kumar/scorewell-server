@@ -65,7 +65,7 @@
 									<tr>
 										<th>User Name</th>
 						              	<th>Set Name</th>
-						              	<th>Submitted Asnwer</th>
+						              	<th>Submitted Answer</th>
 						              	<th>Reviewed</th>
 						            </tr>
 						            <c:forEach var="sets" items="${sets}">

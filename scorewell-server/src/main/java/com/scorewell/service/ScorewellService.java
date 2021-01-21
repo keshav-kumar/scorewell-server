@@ -1,16 +1,11 @@
 package com.scorewell.service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.scorewell.db.MongoDBManager;
+import com.scorewell.dto.QuestionSet;
 
 @Service
 public class ScorewellService {
@@ -20,5 +15,11 @@ public class ScorewellService {
 	@Autowired private DaoService daoService;
 	
 	
+	public QuestionSet getQuestionSetByName(String setName) {
+
+		QuestionSet questionSet = daoService.getQuestionSetByName(setName);
+		
+		return questionSet;
+	}
 	
 }

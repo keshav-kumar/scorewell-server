@@ -36,55 +36,81 @@
 
 		<div class="wrapper content">
 			<section id="cta" class="clear">
-				<h1>At Score Well, We are committed to your success. We are
-					currently offering courses for the following exam:</h1>
-				<br>
-				<h1><B>Civil Services Examination, 2019:</B></h1>
+			<h1>Right now Score Well is offering courses for Agriculture
+				optional for Civil Services Examination 2021 under various modules. They
+				are:</h1>
+			<br>
+				<ul>
+					<li><h1>Classroom Program</h1></li>
+					<li><h1>Test Series</h1></li>
+					<li><h1>Daily Answer Writing Initiative</h1></li>
+				</ul>
+			
+			<!-- <br>
+				<h1><B>Achiever’s Batch:</B></h1>
 				<ul style="list-style-type:disc;">
-				  <li><h1>General Studies Mains Answer Writing (Mon, Wed, Fri)</h1></li>
-				  <li><h1>Essay ( Previous Years Papers)</h1></li>
-				  <li><h1>Agriculture Optional</h1></li>
+				<li><h1>This is the core group of selected 15 -18 students
+						who have recently completed their graduation or are in their final
+						year. They will be given full mentorship in all the stages & in
+						all the papers of the exam and it involves intensive answer
+						writing practice, lots of test, regular feedback etc.</h1></li>
 				</ul>
 				<br>
 				<h1><B>Fees:</B></h1>
 				<ul style="list-style-type:disc;">
-				  <li><h1>General Studies: Rs 5000 (90 days)</h1></li>
-				  <li><h1>Essay: Rs 1000 per month (Every Sunday)</h1></li>
-				  <li><h1>Agriculture : Rs 7500</h1></li>
+				  <li><h1>Rs 10000</h1></li>
+				</ul>
+				<br>
+				<h1><B>Daily Answer Writing Initiative:</B></h1>
+				<ul style="list-style-type:disc;">
+				<li><h1>To be announced later.</h1></li>
+				</ul>
+				<br>
+				<h1><B>Weekly Test:</B></h1>
+				<ul style="list-style-type:disc;">
+				<li><h1>To be announced very soon.</h1></li>
 				</ul>
 				<br>
 				<h1><B>Procedure for Registration:</B></h1>
+				<h1><B>For Achiever’s Batch:</B></h1>
+				<ul style="list-style-type:disc;">
+					<li><h1>You have to Google pay the amount to the mobile
+						number given below and send the screenshot along with Aadhaar card
+						and final year marksheet to teamscorewell@gmail.com .</h1></li>
+					<h1>teamscorewell@gmail.com</h1>
+					<h1>Mobile : 8092480750</h1>
+				</ul>
+				<br>
 				<ul style="list-style-type: disc;">
 					<li><h1>
-							<B>Mode of Payment :</B>Deposit the fee in the Bank of Baroda
-							“SCORE WELL” Bank A/c or through Net Banking Transfer.
+							<B>Alternate Mode of Payment :</B>Deposit the fee in the following Bank account.
 						</h1></li>
 					
 					<li><h1>
-							<B>Bank Name :</B> Bank of Baroda.
+							<B>Bank Name :</B> Union Bank Of India.
 						</h1></li>
 						
 					<li><h1>
-							<B>A/C Name :</B> Score Well
+							<B>A/C Name :</B> Suman Roy
 						</h1></li>
 					
 					<li><h1>
-							<B>A/C No. :</B> 41110200000206
+							<B>A/C No. :</B> 190010100002412
 						</h1></li>
 						
 					<li><h1>
-							<B>Branch :</B> Lalpur, Ranchi
+							<B>Branch :</B> Deoghar, Jharkhand
 						</h1></li>
 						
 					<li><h1>
-							<B>IFSC Code :</B> BARB0LALRAN ( Note : It is zero after BARB )
+							<B>IFSC Code :</B> ANDB0001900  (It’s all zero after ANDB)
 						</h1></li>
 						
 				</ul>
 				<h1>
 					<B>Note : </B>Send us your receipt/challan slip via email after
 					payment of fee (Transfer/Deposit) to <B>teamscorewell@gmail.com</B>
-				</h1>
+				</h1> -->
 			</section>
 		</div>
 	</div>

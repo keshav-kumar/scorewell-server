@@ -35,8 +35,8 @@
 		<div class="wrapper content">
 			<section id="cta" class="clear"> 
 				<ol>
-					<c:forEach var="question" items="${queSet.questions}">
-						<li style="font-size:20px";><h1>${question}</h1></li>
+					<c:forEach var="questionDetail" items="${queSet.questions}">
+						<li style="font-size:20px";><h1>${questionDetail.question}</h1></li>
 					</c:forEach> 
 				</ol>
 			</section>

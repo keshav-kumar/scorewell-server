@@ -38,33 +38,42 @@
 						more confident and disciplined to face the exam successfully. It
 						aims to increase your score by at least 30% and will help you to
 						achieve your goals.</p>
-					<footer>
-							<a class="btn" href="/ias-daily-questions?course=IAS">Read More <span
+					<!-- <footer>
+							<a class="btn" href="/ias-daily-questions?course=IAS">Answer Writing Program <span
 								class="fa fa-arrow-right"></span></a>
-						</footer>
+						</footer> -->
 					</figcaption>
 				</figure>
 				<!-- ################################################################################################ -->
 			</div>
 			<div class="one_half">
 				<!-- ################################################################################################ -->
-				<figure class="btmspace-30">
-					<a href="#"><img class="borderedbox inspace-10 btmspace-10"
-						src="img/professional.jpg" alt=""></a>
-					<figcaption class="borderedbox inspace-30 bg-white">
+				<figcaption class="borderedbox inspace-30 bg-white">
+					<h2 class="heading">
+						<a href="/ias-daily-questions?course=IAS"><font color="red"><B>Answer Writing Program</B></font></a>
+					</h2>
+
+					<!-- <a href="#"><img class="borderedbox inspace-10 btmspace-10"
+						src="img/professional.jpg" alt=""></a> -->
+					<!-- <figcaption class="borderedbox inspace-30 bg-white">
 						<h2 class="heading">Score Well Professional</h2>
 						<p>Coming Soon...</p>
-						<!-- <footer>
-							<a class="btn" href="#">Read More <span
-								class="fa fa-arrow-right"></span></a>
-						</footer> -->
-					</figcaption>
-				</figure>
-				<figure>
-					<a href="#"><img class="borderedbox inspace-10 btmspace-10"
-						src="img/medical.jpg" alt=""></a>
+					</figcaption> -->
+				
+				</figcaption>
+					<!-- <a href="#"><img class="borderedbox inspace-10 btmspace-10"
+						src="img/medical.jpg" alt=""></a> -->
 					<figcaption class="borderedbox inspace-30 bg-white">
-						<h2 class="heading">Score Well Medical</h2>
+						<h2 class="heading"><B>Score Well Updates</B></h2>
+							<ul>
+								<li><h1>Classroom Program</h1></li>
+								<li><h1>Test Series</h1></li>
+								<li><h1>Daily Answer Writing Initiative</h1></li>
+							</ul>
+						<!-- <img class="alignnone size-full wp-image-148903 lazyloaded"
+							style="vertical-align: text-top;"
+							src="icon/new.gif"
+							alt="" data-ll-status="loaded" width="31" height="20"> -->
 						<p>Coming Soon...</p>
 						<!-- <footer>
 							<a class="btn" href="#">Read More <span

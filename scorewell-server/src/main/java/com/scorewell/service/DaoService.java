@@ -21,6 +21,7 @@ import com.google.gson.JsonObject;
 import com.mongodb.BasicDBObject;
 import com.mongodb.util.JSON;
 import com.scorewell.dto.BaseDBObject;
+import com.scorewell.dto.Question;
 import com.scorewell.dto.QuestionSet;
 import com.scorewell.utils.AppUtils;
 import com.scorewell.utils.MongoUtils;
@@ -417,6 +418,25 @@ public class DaoService {
 		return null;
 	}
 	
+	public String getLatestQuestionSetName(String course, String subjectName) {
+		Map<String, Object> queryParam = new HashMap<>();
+		queryParam.put("course", course);
+		queryParam.put("subjectName", subjectName);
+		
+		Map<String, Object> sortmap = new HashMap<>();
+		sortmap.put("releaseDate", -1);
+		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, 0, 1, queryParam, sortmap);
+		
+		System.out.println("Mongo Result : "+documents.size());
+		
+		if (documents.size()>0 && documents != null) {
+			List<QuestionSet> queList = documents.stream().map(o -> getDocToClass(o, QuestionSet.class))
+					.collect(Collectors.toList());
+			return queList.get(0).getSetName();
+		}
+		return null;
+	}
+	
 	public List<UserActivity> getUserActivity(HttpServletRequest request) {
 		
 		Map<String, Object> queryParam = new HashMap<>();
@@ -497,8 +517,8 @@ public class DaoService {
 				.collect(Collectors.toList());
 		if(list!=null) {
 			for(QuestionSet d:list) {
-				String url = d.getQuestions().get(0);
-				System.out.println(url);
+				Question question = d.getQuestions().get(0);
+				System.out.println(question);
 
 			}
 		}
@@ -520,6 +540,14 @@ public class DaoService {
 //			}
 //		}
 		return urls;
+	}
+	
+	public void deleteQuestionSet(String setName) {
+		Map<String, Object> query = new HashMap<>();
+		query.put("setName", new ObjectId(setName));
+		Map<String, Object> fieldMap = new HashMap<>();
+		fieldMap.put("deleted", true);
+		mongoDBManager.setField(QUESTION_SET, query, fieldMap);
 	}
 	
 	public void updateTest(boolean status) {

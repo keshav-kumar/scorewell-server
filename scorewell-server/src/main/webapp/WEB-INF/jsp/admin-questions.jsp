@@ -45,14 +45,26 @@
 						<c:forEach var="queSetDesc" items="${questionSets}">
 							<li><article> 
 								<header>
-									<address>
-					                	${queSetDesc.releaseDate} <a href="/question-set?set-name=${queSetDesc.setName}" target="_blank">${queSetDesc.setName}</a>
-					                	<a href="pdf/question/${queSetDesc.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
-					                	<div class="fl_right">
-											<input type="submit" value="Delete" id="submit">
-										</div>
-									</address>
-								</header> 
+										<address>
+											${queSetDesc.releaseDate} <a
+												href="/question-set?set-name=${queSetDesc.setName}"
+												target="_blank">${queSetDesc.setName}</a> <a
+												href="pdf/question/${queSetDesc.pdfFileName}"
+												target="_blank"><img src="icon/pdf.png" /> </a>
+
+
+											<div class="fl_right">
+												<button id="deleteQueSet" class="delete_button"><a href="/sw/api/delete-question-set?setname=${queSetDesc.setName}">Delete</a></button>
+												<a href="/sw/api/delete-question-set?setname=${queSetDesc.setName}" class="button">Go to Google</a>
+												
+											</div>
+
+											<!-- <div class="fl_right">
+												<input type="submit" value="Delete" id="deleteQueSet">
+											</div> -->
+										</address>
+										
+									</header> 
 							</article></li>
 						
 						</c:forEach>

@@ -48,9 +48,8 @@
 
 		<div class="wrapper content">
 			<section id="cta" class="clear">
-			<h1>We invite talented people to join our team who are focused,
-				disciplined and have a passion towards learning, teaching and
-				innovation.</h1>
+			<h1>If you are interested in working with us, please send your
+				resume to <B>teamscorewell@gmail.com</B> .</h1>
 			<br>
 			<h1>
 				To become a part of Score Well Team, please send your detailed

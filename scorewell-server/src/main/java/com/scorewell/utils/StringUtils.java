@@ -135,4 +135,18 @@ public class StringUtils {
     	}
 		return currency.format(0);
     }
+    
+    public static int generateSetNumber(String setName) {
+    	if(setName == null)
+    		return 1;
+    	
+    	return Integer.parseInt(setName.substring(setName.lastIndexOf('_')+1, setName.length()))+1;
+    	
+    }
+    
+//    public static void main(String[] ags) {
+//    	
+//    	StringUtils stringUtils = new StringUtils();
+//    	System.out.println(stringUtils.generateSetNumber("test_12"));
+//    }
 }

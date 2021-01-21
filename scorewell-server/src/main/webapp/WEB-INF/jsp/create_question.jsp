@@ -36,14 +36,23 @@
 			           <option>Medical</option>
 			       </select>
 				</div>
-				<div class="one_quarter">
+				
+				<div class="one_quarter" size="22">
+					<label for="subject">Subject <span>*</span></label> 
+					<select name="subject" id="subject">
+			           <option>Agri</option>
+			           <option>GS</option>
+			       </select>
+				</div>
+				
+				<!-- <div class="one_quarter">
 					<label for="name">Subject <span>*</span></label> 
 					<input type="text" name="subject" id="subject" value="" size="22" required="required">
-				</div>
-				<div class="one_quarter">
+				</div> -->
+				<!-- <div class="one_quarter">
 					<label for="phone">Set Name<span>*</span></label> 
 					<input type="text" name="setName" id="setName" value="" size="22" required="required">
-				</div>
+				</div> -->
 				<div class="one_quarter">
 					<label for="email">Release date<span>*</span></label> 
 					<input type="text" id="datepicker"></p>
@@ -56,17 +65,17 @@
 					<textarea name="que1" id="que1" cols="100" rows="3"></textarea>
 				</div>
 				<!-- <div class="one_quarter"> -->
-				<div class="block clear">
+				<!-- <div class="block clear">
 					&nbsp;<label for="phone">Question 2. <span>*</span></label> 
 					<textarea name="que2" id="que2" cols="100" rows="3"></textarea>
 					
-				</div>
+				</div> -->
 				<!-- <div class="one_quarter"> -->
-				<div class="block clear">
+				<!-- <div class="block clear">
 					&nbsp;<label for="email">Question 3. <span>*</span></label> 
 					<textarea name="que3" id="que3" cols="100" rows="3"></textarea>
 					
-				</div>
+				</div> -->
 				<!-- <div class="one_quarter"> -->
 				<div class="block clear">
 					&nbsp;<label for="upload">Upload <span>*</span></label> <input id="upload"

@@ -36,7 +36,7 @@ function fire_ajax_submit() {
 	
 	alert(course);
 
-	if (que1 === "" || que2 === "" || que3 === "") {
+	if (que1 === "" ){//}|| que2 === "" || que3 === "") {
 		$("#result").text("Please complete the question set.");
 	} else {
 

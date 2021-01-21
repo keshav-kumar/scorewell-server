@@ -1,9 +1,7 @@
 package com.scorewell.dto;
 
-import java.util.Date;
 import java.util.List;
 
-import com.scorewell.dto.BaseDBObject;
 import com.scorewell.utils.StringUtils;
 
 public class QuestionSet extends BaseDBObject {
@@ -12,7 +10,7 @@ public class QuestionSet extends BaseDBObject {
 	private String setName;
 	private String subjectName;
 	private String pdfFileName;
-	private List<String> questions;
+	private List<Question> questions;
 	private long releaseDate;
 	
 	public String getSetName() {
@@ -33,12 +31,12 @@ public class QuestionSet extends BaseDBObject {
 	public void setPdfFileName(String pdfFileName) {
 		this.pdfFileName = pdfFileName;
 	}
-	public List<String> getQuestions() {
-		return questions;
-	}
-	public void setQuestions(List<String> questions) {
-		this.questions = questions;
-	}
+//	public List<String> getQuestions() {
+//		return questions;
+//	}
+//	public void setQuestions(List<String> questions) {
+//		this.questions = questions;
+//	}
 	public String getReleaseDate() {
 		return StringUtils.formatDate(this.releaseDate, "dd-MM-yyyy");
 	}
@@ -50,6 +48,12 @@ public class QuestionSet extends BaseDBObject {
 	}
 	public void setCourse(String course) {
 		this.course = course;
+	}
+	public List<Question> getQuestions() {
+		return questions;
+	}
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
 	}
 	
 	

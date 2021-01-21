@@ -83,15 +83,15 @@
 			<div id="gen_study">
 				<div id="comments">
 					
-					<h2>Question Sets</h2>
+					<h2>Test Papers</h2>
 					<ul>
 					
 						<c:forEach var="queSetDesc" items="${questionSets}">
 							<li><article> 
 								<header>
 									<address>
-					                	${queSetDesc.releaseDate} <a href="/question-set?set-name=${queSetDesc.setName}" target="_blank">${queSetDesc.setName}</a>
-					                	<a href="pdf/question/${queSetDesc.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
+					                	${queSetDesc.releaseDate} : <a href="/question-set?set-name=${queSetDesc.setName}" target="_blank"><font color="red">${queSetDesc.setName}</font></a>
+					                	<a href="pdf/question/${queSetDesc.pdfFileName}" target="_blank"><!-- <img src="icon/pdf.png" /> --> </a>
 									</address>
 								</header> 
 							</article></li>

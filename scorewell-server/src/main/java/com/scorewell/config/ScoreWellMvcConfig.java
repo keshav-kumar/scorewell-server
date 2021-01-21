@@ -8,14 +8,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.scorewell.db.MongoDBManager;
-import com.scorewell.service.UserService;
-
-
 
 @Configuration
 @ComponentScan(basePackages = "com.scorewell")
@@ -33,6 +29,7 @@ public class ScoreWellMvcConfig extends WebMvcConfigurerAdapter{
 		registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
 		registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/");
+		registry.addResourceHandler("/gif/**").addResourceLocations("/WEB-INF/gif/");
 		registry.addResourceHandler("/styles/**").addResourceLocations("/WEB-INF/styles/");
 		registry.addResourceHandler("/plugins/**").addResourceLocations("/WEB-INF/plugins/");
 		registry.addResourceHandler("/icon/**").addResourceLocations("/WEB-INF/icon/");
@@ -53,9 +50,9 @@ public class ScoreWellMvcConfig extends WebMvcConfigurerAdapter{
 //        return new MongoDBManager("localhost", "jobmatcher");
     }
 	
-	@Bean(name = "userService")
-    public UserService serService() {
-		return new UserService();
-    }
+//	@Bean(name = "userService")
+//    public UserService serService() {
+//		return new UserService();
+//    }
 	
 }
