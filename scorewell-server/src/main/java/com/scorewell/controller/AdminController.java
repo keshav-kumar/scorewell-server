@@ -40,8 +40,8 @@ public class AdminController {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-    private Environment env;
+//	@Autowired
+//    private Environment env;
 	
 	@Autowired private DaoService daoService;
 

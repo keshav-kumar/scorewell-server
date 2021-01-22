@@ -544,7 +544,7 @@ public class DaoService {
 	
 	public void deleteQuestionSet(String setName) {
 		Map<String, Object> query = new HashMap<>();
-		query.put("setName", new ObjectId(setName));
+		query.put("setName", setName);
 		Map<String, Object> fieldMap = new HashMap<>();
 		fieldMap.put("deleted", true);
 		mongoDBManager.setField(QUESTION_SET, query, fieldMap);

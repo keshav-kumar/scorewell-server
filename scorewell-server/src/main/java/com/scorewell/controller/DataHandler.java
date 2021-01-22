@@ -97,10 +97,10 @@ public class DataHandler {
 	
 
 	@RequestMapping(value = { "/api/delete-question-set" })
-	public @ResponseBody JsonObject deleteQuestionSetController(@RequestParam String setname) {
+	public @ResponseBody String deleteQuestionSetController(@RequestParam String setname) {
 
 		System.out.println("Deleting QueSet : "+setname);
-		return questionSetService.deleteAdditionInsured(setname);
+		return questionSetService.deleteAdditionInsured(setname).toString();
 	}
 
 	@PostMapping("/api/upload-answer")

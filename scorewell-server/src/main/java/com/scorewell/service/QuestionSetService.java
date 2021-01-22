@@ -46,18 +46,18 @@ public class QuestionSetService {
 		question1.setQuestion(request.getParameter("que1"));
 		question1.setQuestionId(request.getParameter("course")+"_"+setName+"-Q1");
 		
-		Question question2 = new Question();
-		question2.setQuestion(request.getParameter("que2"));
-		question2.setQuestionId(request.getParameter("course")+"_"+setName+"-Q2");
-		
-		Question question3 = new Question();
-		question3.setQuestion(request.getParameter("que3"));
-		question3.setQuestionId(request.getParameter("course")+"_"+setName+"-Q3");
+//		Question question2 = new Question();
+//		question2.setQuestion(request.getParameter("que2"));
+//		question2.setQuestionId(request.getParameter("course")+"_"+setName+"-Q2");
+//		
+//		Question question3 = new Question();
+//		question3.setQuestion(request.getParameter("que3"));
+//		question3.setQuestionId(request.getParameter("course")+"_"+setName+"-Q3");
 		
 		List<Question> questions = new ArrayList<Question>();
 		questions.add(question1);
-		questions.add(question2);
-		questions.add(question3);
+//		questions.add(question2);
+//		questions.add(question3);
 		questionSet.setQuestions(questions);
 		questionSet.setPdfFileName(pdfFileName);
 
@@ -88,7 +88,7 @@ public class QuestionSetService {
 	}
 	
 	public JsonObject deleteAdditionInsured(String setName) {
-//		daoService.deleteQuestionSet(setName);
+		daoService.deleteQuestionSet(setName);
 		return JsonUtils.createSuccessResponse("deleted " + setName);
 	}
 	

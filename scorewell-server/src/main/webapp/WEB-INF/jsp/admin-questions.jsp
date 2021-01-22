@@ -54,9 +54,7 @@
 
 
 											<div class="fl_right">
-												<button id="deleteQueSet" class="delete_button"><a href="/sw/api/delete-question-set?setname=${queSetDesc.setName}">Delete</a></button>
-												<a href="/sw/api/delete-question-set?setname=${queSetDesc.setName}" class="button">Go to Google</a>
-												
+												<button id="deleteQueSet" class="delete_button" value=${queSetDesc.setName}>Delete</button>
 											</div>
 
 											<!-- <div class="fl_right">
