@@ -24,20 +24,16 @@
 					<a href="#"><img class="borderedbox inspace-10 btmspace-30"
 						src="img/ias.jpg" alt=""></a>
 					<figcaption class="borderedbox inspace-30 bg-white">
-						<h2 class="heading">Score Well IAS</h2>
-					<p>Answer writing plays a very important role in Civil Services
-						Examination. Regular answer writing and its sincere evaluation is
-						important to score very high marks in mains exam which ensures
-						selection with good rank.</p>
-					<p>Keeping this in mind, Score Well has started an answer
-						writing program where important and expected questions in GS will
-						be put and students can write their answers and get it
-						evaluatedQuestions will be put on triweekly basis (Mon, Wed,
-						Fri)...&hellip;</p>
-					<p>It will develop the right answer writing skills, makes you
-						more confident and disciplined to face the exam successfully. It
-						aims to increase your score by at least 30% and will help you to
-						achieve your goals.</p>
+						<h2 class="heading">Score Well</h2>
+						<p>Score Well is the newest entry in the field of education
+							which aims to provide quality education which is easily
+							accessible and affordable to all where premium quality content
+							and right guidance will be provided according to latest exam
+							pattern and requirement by experts..</p>
+						<p>We hope and aim to give you our best so that we together
+							create a beautiful journey. Very soon it aims to add various
+							dimensions to it so that you take maximum advantage out of it.</p>
+						<p>With regards,<br>Team Score Well</p>
 					<!-- <footer>
 							<a class="btn" href="/ias-daily-questions?course=IAS">Answer Writing Program <span
 								class="fa fa-arrow-right"></span></a>

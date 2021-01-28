@@ -61,29 +61,36 @@
 		<div class="content three_quarter">
 			<!-- ################################################################################################ -->
 			<h1 class="text-center"><B>Score Well Answer Writing Program</B></h1>
-			<p class="text-justify">Answer writing plays a very important role in Civil Services
-				Examination. Regular answer writing and its sincere evaluation is
-				important to score very high marks in mains exam which ensures
-				selection with good rank.</p>
-			<p class="text-justify">Keeping this in mind, Score Well has started an answer writing
-				program where important and expected questions in GS will be put and
-				students can write their answers and get it evaluated. Questions will
-				be put on triweekly basis (Mon, Wed, Fri).</p>
-			<p class="text-justify">It will develop the right answer writing skills, makes you more
-				confident and disciplined to face the exam successfully. It aims to
-				increase your score by at least 30% and will help you to achieve your
-				goals.</p>
-			<h1>Note:</h1>
+			<p class="text-justify">Answer writing plays a very important
+				role in Civil Services Examination. Regular answer writing and its
+				sincere evaluation is important to score very high marks in mains
+				exam which ensures selection with good rank.</p>
+			<p class="text-justify">Keeping this in mind, Score Well has
+				started an answer writing program where important and previous years
+				questions in GS/Agriculture will be put and students can write their
+				answers and get it evaluated. Here, one or two questions, according
+				to a schedule, will be put on a daily basis.</p>
+			<p class="text-justify">Students are expected that they write and
+				submit their answers on a daily basis to get the maximum advantage.
+				It will develop the necessary answer writing skills, boost
+				confidence and makes one more disciplined to face the exam
+				successfully.</p>
+			<p class="text-justify"><h1 class="text-left"><B><u>Notes:</u></B></h1></p>
 			<ul>
-				<li>Answers will be evaluated in English medium.</li>
-				<li>Score Well will try its best to give evaluation within 24 hrs.</li>
-				<li>Only three question/day would be set as part of this answer writing program.</li>
-				<li>The program runs on subscription basis for 90 days duration.</li>
+				<li>Please upload good quality scanned pdf file for proper evaluation.</li>
+				<li>Adhere to necessary word limit where required. Can
+					illustrate with suitable facts, diagrams, case studies and relevant
+					examples where required.</li>
+				<li>The program runs on a subscription basis. Student can take
+					subscription upto Mains 2021 to get the maximum advantage. Student
+					can write as many tests as possible and get it evaluated.</li>
+				<li>Fees: Rs 15000</li>
 			</ul>
+			
 			<div id="gen_study">
 				<div id="comments">
 					
-					<h2>Test Papers</h2>
+					<p class="text-justify"><h1 class="text-left"><B><u>Test Papers:</u></B></h1></p>
 					<ul>
 					
 						<c:forEach var="queSetDesc" items="${questionSets}">

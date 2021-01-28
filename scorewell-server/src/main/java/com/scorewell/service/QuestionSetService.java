@@ -32,20 +32,21 @@ public class QuestionSetService {
 	public String createQuestionSet(HttpServletRequest request, String pdfFileName) {
 
 		QuestionSet questionSet = new QuestionSet();
-		
+
 		questionSet.setCourse(request.getParameter("course"));
 //		questionSet.setSetName(request.getParameter("setName"));
 		questionSet.setSubjectName(request.getParameter("subject"));
 
 		questionSet.setReleaseDate(StringUtils.strToDate(request.getParameter("publishDate"), "dd-MM-yyyy").getTime());
-		
-		String setName = request.getParameter("subject") + "_Test_" + StringUtils.generateSetNumber(daoService.getLatestQuestionSetName(request.getParameter("course"), request.getParameter("subject")));
+
+		String setName = request.getParameter("subject") + "_Test_" + StringUtils.generateSetNumber(
+				daoService.getLatestQuestionSetName(request.getParameter("course"), request.getParameter("subject")));
 		questionSet.setSetName(setName);
-		
+
 		Question question1 = new Question();
 		question1.setQuestion(request.getParameter("que1"));
-		question1.setQuestionId(request.getParameter("course")+"_"+setName+"-Q1");
-		
+		question1.setQuestionId(request.getParameter("course") + "_" + setName + "-Q1");
+
 //		Question question2 = new Question();
 //		question2.setQuestion(request.getParameter("que2"));
 //		question2.setQuestionId(request.getParameter("course")+"_"+setName+"-Q2");
@@ -53,7 +54,7 @@ public class QuestionSetService {
 //		Question question3 = new Question();
 //		question3.setQuestion(request.getParameter("que3"));
 //		question3.setQuestionId(request.getParameter("course")+"_"+setName+"-Q3");
-		
+
 		List<Question> questions = new ArrayList<Question>();
 		questions.add(question1);
 //		questions.add(question2);
@@ -64,7 +65,7 @@ public class QuestionSetService {
 		questionSet.setCreateTime(System.currentTimeMillis());
 		questionSet.setUpdateTime(System.currentTimeMillis());
 		questionSet.setDeleted(false);
-		
+
 		return daoService.createQuestionSet(questionSet);
 	}
 	
