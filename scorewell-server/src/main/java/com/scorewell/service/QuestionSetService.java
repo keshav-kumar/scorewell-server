@@ -37,7 +37,7 @@ public class QuestionSetService {
 //		questionSet.setSetName(request.getParameter("setName"));
 		questionSet.setSubjectName(request.getParameter("subject"));
 
-		questionSet.setReleaseDate(StringUtils.strToDate(request.getParameter("publishDate"), "dd-MM-yyyy").getTime());
+		questionSet.setReleaseDate(StringUtils.strToDate(request.getParameter("publishDate"), "dd-MM-yyyy").getTime()+(9 * 60 * 60 * 1000));
 
 		String setName = request.getParameter("subject") + "_Test_" + StringUtils.generateSetNumber(
 				daoService.getLatestQuestionSetName(request.getParameter("course"), request.getParameter("subject")));

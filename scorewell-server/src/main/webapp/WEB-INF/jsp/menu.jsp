@@ -49,6 +49,7 @@
 					<li><a href="/course-info">Courses</a></li>
 					<li><a href="/career">Careers</a></li>
 					<li><a href="/contact">Contact</a></li>
+					<!-- <li><a href="/resource">Resource</a></li> -->
 				</ul>
 			</nav>
 			<div id="search" class="fl_right">

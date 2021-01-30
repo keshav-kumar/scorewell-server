@@ -55,6 +55,7 @@
 				</div> -->
 				<div class="one_quarter">
 					<label for="email">Release date<span>*</span></label> 
+					<!-- <input type="text" id="datepicker"></p> -->
 					<input type="text" id="datepicker"></p>
 				</div>
 					

@@ -398,8 +398,12 @@ public class DaoService {
 		queryParam.put("deleted", false);
 
 		Map timeConstraint = new HashMap();
+//		long today = StringUtils
+//				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
+		
 		long today = StringUtils
-				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
+				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy HH:MM:SS"), "dd-MM-yyyy HH:MM:SS").getTime();
+		
 		timeConstraint.put("$lte", today);
 		queryParam.put("releaseDate", timeConstraint);
 		

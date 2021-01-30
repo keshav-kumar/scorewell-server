@@ -40,7 +40,7 @@ public class ScoreWellController {
 
 	@RequestMapping(value = { "/", "/home" })
 	public ModelAndView homePageController(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println("Welcome VV Account Info");
+		System.out.println("Welcome Scorewell Home page.");
 		model.addAttribute("isDataAvail", "YES");
 		
 		return new ModelAndView("index");
@@ -104,6 +104,13 @@ public class ScoreWellController {
 		System.out.println("Welcome to contact Section");
 		
 		return new ModelAndView("contact");
+	}
+	
+	@RequestMapping(value = { "/resource" })
+	public ModelAndView resourcePageController(HttpServletRequest request, HttpServletResponse response, Model model) {
+		System.out.println("Welcome to contact Section");
+		
+		return new ModelAndView("resource");
 	}
 	
 	@RequestMapping(value = { "/ias-courses" })
