@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
+import java.util.TimeZone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,6 +85,7 @@ public class StringUtils {
     public static String formatDate(long timeInMillis, String format){
     	try{
     		SimpleDateFormat sdf = new SimpleDateFormat(format);
+    		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
     		String dateStr = sdf.format(new Date(timeInMillis));
     		return dateStr;
     	}catch(Exception e){
@@ -95,6 +97,7 @@ public class StringUtils {
     public static Date strToDate(String strDate, String format){
     	try{
     		SimpleDateFormat sdf = new SimpleDateFormat(format);
+    		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
     		return sdf.parse(strDate);
     	}catch(Exception e){
     		logger.error(e.getMessage(), e);
