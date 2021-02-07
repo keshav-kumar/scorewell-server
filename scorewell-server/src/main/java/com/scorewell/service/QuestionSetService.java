@@ -43,22 +43,23 @@ public class QuestionSetService {
 				daoService.getLatestQuestionSetName(request.getParameter("course"), request.getParameter("subject")));
 		questionSet.setSetName(setName);
 
-		Question question1 = new Question();
-		question1.setQuestion(request.getParameter("que1"));
-		question1.setQuestionId(request.getParameter("course") + "_" + setName + "-Q1");
-
-//		Question question2 = new Question();
-//		question2.setQuestion(request.getParameter("que2"));
-//		question2.setQuestionId(request.getParameter("course")+"_"+setName+"-Q2");
-//		
-//		Question question3 = new Question();
-//		question3.setQuestion(request.getParameter("que3"));
-//		question3.setQuestionId(request.getParameter("course")+"_"+setName+"-Q3");
-
 		List<Question> questions = new ArrayList<Question>();
-		questions.add(question1);
-//		questions.add(question2);
-//		questions.add(question3);
+		int totalQue = Integer.parseInt(request.getParameter("TotalQuestions"));
+		for(int i =1; i< totalQue; i++) {
+			
+			Question question = new Question();
+			question.setQuestion(request.getParameter("que"+i));
+			question.setQuestionId(request.getParameter("course") + "_" + setName + "-Q"+i);
+			questions.add(question);
+			
+			System.out.println("Yoo Que"+i+" : "+request.getParameter("que"+i));
+		}
+		
+//		Question question1 = new Question();
+//		question1.setQuestion(request.getParameter("que1"));
+//		question1.setQuestionId(request.getParameter("course") + "_" + setName + "-Q1");
+//		questions.add(question1);
+		
 		questionSet.setQuestions(questions);
 		questionSet.setPdfFileName(pdfFileName);
 

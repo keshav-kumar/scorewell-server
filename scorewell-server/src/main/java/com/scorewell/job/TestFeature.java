@@ -11,7 +11,7 @@ public class TestFeature {
 //		long nineamTime = StringUtils.strToDate("30-01-2021", "dd-MM-yyyy").getTime()+(2 * 70 * 60 * 1000);
 //		System.out.println(nineamTime);
 //		System.out.println(StringUtils.strToDate("30-01-2021", "dd-MM-yyyy").getTime()+(2 * 80 * 60 * 1000));
-//		System.out.println(StringUtils.formatDate(1612200600000L, "dd-MM-yyyy HH:mm:ss"));
+		System.out.println("NOW : "+StringUtils.formatDate(1612409400000L, "dd-MM-yyyy HH:mm:ss"));
 //		
 		long today = StringUtils
 				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy HH:mm:ss"), "dd-MM-yyyy HH:mm:ss").getTime();
