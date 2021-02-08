@@ -133,6 +133,22 @@
 	letter-spacing: 0.1em;
 }
 
+.add_button
+{
+	width: 136px;
+	height: 40px;
+	background: green;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	/* text-transform: uppercase; */
+	color: #14bdee;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+
 .newsletter_input
 {
 	width: calc(100% - 136px);

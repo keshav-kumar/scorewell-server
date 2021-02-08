@@ -72,34 +72,32 @@
 						</div>
 					</div>
 
-					<input type='button' value='Add Question' id='addQuestion'>
-					<input type='button' value='Remove Question' id='removeQuestion'>
+
+					<div class="one_quarter first">
+						<input type='button' value='Add Question' id='addQuestion' class="add_question_button">
+					</div>
+					
+					<div class="one_quarter">
+						<input type='button' value='Remove Question' id='removeQuestion' class="delete_question_button">
+					</div>
+
+					<!-- <input type='button' value='Add Question' id='addQuestion' class="add_button">
+					<input type='button' value='Remove Question' id='removeQuestion' class="delete_button">
 					<input type='button' value='Get Question' id='getQuestion'>
+					<button type='button' id="getQuestion" class="delete_button">Get Question</button> -->
 										
 
 					<!-- &nbsp;<label for="name">Question 1. <span>*</span></label>
 
 					<textarea name="que1" id="que1" cols="100" rows="3"></textarea> -->
 				</div>
-				<!-- <div class="one_quarter"> -->
-				<!-- <div class="block clear">
-					&nbsp;<label for="phone">Question 2. <span>*</span></label> 
-					<textarea name="que2" id="que2" cols="100" rows="3"></textarea>
-					
-				</div> -->
-				<!-- <div class="one_quarter"> -->
-				<!-- <div class="block clear">
-					&nbsp;<label for="email">Question 3. <span>*</span></label> 
-					<textarea name="que3" id="que3" cols="100" rows="3"></textarea>
-					
-				</div> -->
-				<!-- <div class="one_quarter"> -->
+				
 				<div class="block clear">
 					&nbsp;<label for="upload">Upload <span>*</span></label> <input
 						id="upload" type="file" name="file" value="Upload File">
 				</div>
 				<div>
-					&nbsp; <input type="submit" value="Submit" id="submit"> <span
+					&nbsp; <input type="submit" value="Submit" id="submit" class="orange_button"> <span
 						id="result"></span>
 				</div>
 			</form>
