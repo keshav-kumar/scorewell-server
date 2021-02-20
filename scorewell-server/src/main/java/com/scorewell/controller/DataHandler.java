@@ -2,6 +2,7 @@ package com.scorewell.controller;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -113,7 +114,8 @@ public class DataHandler {
 			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
 		}
 
-		String questionsetId = questionSetService.saveUserActivity(request, env.getProperty("upload.answer.dir"));
+		String questionsetId = questionSetService.saveUserActivity(request,
+				env.getProperty("resources.dir") + env.getProperty("upload.answer.dir"));
 		try {
 
 			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "A");
@@ -133,8 +135,8 @@ public class DataHandler {
 
 		logger.debug("Reviewed answer uploading.");
 
-		if (uploadfile.isEmpty()) {
-			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
+		if (uploadfile.isEmpty() ) {
+			return new ResponseEntity("Please select a file !", HttpStatus.BAD_REQUEST);
 		}
 
 		questionSetService.updateUserActivity(request);
@@ -150,5 +152,4 @@ public class DataHandler {
 				HttpStatus.OK);
 
 	}
-
 }

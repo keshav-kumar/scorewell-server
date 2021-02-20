@@ -4,7 +4,6 @@ $(document).ready(function () {
         event.preventDefault();
         upload_answer();
     });
-
 });
 
 function upload_answer() {

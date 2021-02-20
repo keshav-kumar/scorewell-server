@@ -3,6 +3,7 @@ package com.scorewell.controller;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,9 +34,7 @@ import com.scorewell.dto.UserActivity;
 @Controller
 public class ScoreWellController {
 
-	@Autowired
-	private MongoDBManager mongoDBManager;
-	
+	@Autowired private Environment env;
 	@Autowired private ScorewellService scorewellService;
 	@Autowired private DaoService daoService;
 
@@ -87,6 +87,7 @@ public class ScoreWellController {
 		
 		QuestionSet questionSet = scorewellService.getQuestionSetByName(request.getParameter("set-name"));
 		model.addAttribute("questionSet", questionSet);
+		model.addAttribute("fileBasePath", env.getProperty("resources.dir")+"question/");
 		
 		return new ModelAndView("question-set");
 	}
@@ -101,14 +102,14 @@ public class ScoreWellController {
 	
 	@RequestMapping(value = { "/contact" })
 	public ModelAndView contactPageController(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println("Welcome to contact Section");
+		System.out.println("Welcome to CONTACT Section");
 		
 		return new ModelAndView("contact");
 	}
 	
 	@RequestMapping(value = { "/resource" })
 	public ModelAndView resourcePageController(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println("Welcome to contact Section");
+		System.out.println("Welcome to RESOURCE Section");
 		
 		return new ModelAndView("resource");
 	}

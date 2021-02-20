@@ -26,8 +26,9 @@
 		<div class="one_half first">
 			<h2 class="heading">
 				<font color="red"><B>Question Set : ${questionSet.setName}</B></font>
-				<a href="pdf/question/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a>
+				<%-- <a href="pdf/question/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a> --%>
 				<input type="hidden" id="fileName" value="${queSet.pdfFileName}">
+				<a type='button' href="download/question/file/${queSet.pdfFileName}" class="add_question_button" target="_blank">Download File</a>
 			</h2>
 		</div>
 		</section>

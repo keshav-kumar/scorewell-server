@@ -38,16 +38,14 @@ function upload_review() {
         cache: false,
         timeout: 600000,
         success: function (data) {
-
             $("#result").text(data);
             console.log("SUCCESS : ", data);
             $("#submit").prop("disabled", true);
 
         },
         error: function (e) {
-
-            $("#result").text("Error:Something went wrong.");
-            console.log("ERROR : ", e);
+        	$("#result").text("Error: "+e.responseText);
+            console.log("ERROR : ", e.responseText);
             $("#submit").prop("disabled", false);
 
         }

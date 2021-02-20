@@ -1,6 +1,5 @@
 package com.scorewell.service;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,10 +16,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class UploadService {
 
-	private static String PDF_SOURCE = "/src/main/webapp/WEB-INF/pdf/";
-	private static String QUESTION = "question/";
-	private static String ANSWER = "answer/";
-	private static String REVIEW = "reviewed/";
+//	private static String PDF_SOURCE = "/src/main/webapp/WEB-INF/pdf/";
+//	private static String QUESTION = "question/";
+//	private static String ANSWER = "answer/";
+//	private static String REVIEW = "reviewed/";
 
 	@Autowired
 	private Environment env;
@@ -33,25 +32,24 @@ public class UploadService {
 			if (file.isEmpty()) {
 				continue;
 			}
-			String basePathOfClass = new File(".").getAbsolutePath();
+//			String basePathOfClass = new File(".").getAbsolutePath();
 			byte[] bytes = file.getBytes();
 
 			String subDir_fileName = "";
 			if (uploadType.equals("Q"))
-				subDir_fileName = QUESTION + file.getOriginalFilename();
+				subDir_fileName = env.getProperty("upload.question.dir") + file.getOriginalFilename();
 			else if (uploadType.equals("A"))
-				subDir_fileName = ANSWER + request.getParameter("phone") + "_" + request.getParameter("email") + "_"
-						+ request.getParameter("fileName");
+				subDir_fileName = env.getProperty("upload.answer.dir") + request.getParameter("phone") + "_"
+						+ request.getParameter("email") + "_" + request.getParameter("fileName");
 			else if (uploadType.equals("R"))
-				subDir_fileName = REVIEW + request.getParameter("phone") + "_" + request.getParameter("email") + "_"
-						+ request.getParameter("fileName");
-			
-			System.out.println("Sub DIR : "+basePathOfClass + PDF_SOURCE + subDir_fileName);
+				subDir_fileName = env.getProperty("upload.reviewed.dir") + request.getParameter("phone") + "_"
+						+ request.getParameter("email") + "_" + request.getParameter("fileName");
 
-			Path path = Paths.get(basePathOfClass + PDF_SOURCE + subDir_fileName);
+			System.out.println("Sub DIR : " + env.getProperty("resources.dir") + subDir_fileName);
+//			Path path = Paths.get(basePathOfClass + PDF_SOURCE + subDir_fileName);
+			Path path = Paths.get(env.getProperty("resources.dir") + subDir_fileName);
 			Files.write(path, bytes);
 
 		}
-
 	}
 }
