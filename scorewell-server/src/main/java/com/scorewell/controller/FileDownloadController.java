@@ -52,6 +52,7 @@ public class FileDownloadController {
 	public void downloadAnsweresource(HttpServletRequest request, HttpServletResponse response,
 			@PathVariable("fileName") String fileName) throws IOException {
 
+		System.out.println("Download Answer file : "+fileName);
 		File file = new File(env.getProperty("resources.dir")+ "answer/"+ fileName);
 		fileDownloadOperation(response, file);
 	}
@@ -67,6 +68,8 @@ public class FileDownloadController {
 	private void fileDownloadOperation(HttpServletResponse response, File file) throws IOException{
 		if (file.exists()) {
 
+			System.out.println("Full File Path : "+file.getAbsolutePath());
+			
 			String mimeType = URLConnection.guessContentTypeFromName(file.getName());
 			if (mimeType == null) {
 				mimeType = "application/octet-stream";

@@ -80,6 +80,7 @@ public class QuestionSetService {
 		userActivity.setSetName(request.getParameter("setName"));
 		userActivity.setFileName(request.getParameter("fileName"));
 		userActivity.setFilePath(fileDir);
+		userActivity.setReviwedUploaded(false);
 		userActivity.setEvaluated(false);
 		userActivity.setUploadDateTime(System.currentTimeMillis());
 		userActivity.setEvaluateDateTime(System.currentTimeMillis());
@@ -96,9 +97,9 @@ public class QuestionSetService {
 	
 	
 	
-	public void updateUserActivity(HttpServletRequest request) {
+	public void updateUserActivity(HttpServletRequest request, boolean reviewUpload) {
 		
-		daoService.updateUserActivity(request);
+		daoService.updateUserActivity(request, reviewUpload);
 		
 	}
 

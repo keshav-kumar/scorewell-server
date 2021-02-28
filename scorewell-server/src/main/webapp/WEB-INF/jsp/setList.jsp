@@ -73,15 +73,23 @@
 				            				<td>${sets.userName}</td>
 							              	<td>${sets.setName}</td>
 							              	<td><a type='button' href="download/answer/file/${sets.phone}_${sets.emailId}_${sets.fileName}" class="add_question_button" target="_blank">Download Answer</a></td>
-							                  
 						              		<c:choose>
 							              		<c:when test="${sets.evaluated == true }">
-									              	<td><a type='button' href="download/reviewed/file/${sets.phone}_${sets.emailId}_${sets.fileName}" class="add_question_button" target="_blank"><font color="green">Download Review</font></a></td>
+							              			<c:choose>
+							              				<c:when test="${empty sets.reviewComment}">
+							              				<td><a type='button' href="download/reviewed/file/${sets.phone}_${sets.emailId}_${sets.fileName}" class="add_question_button" target="_blank"><font color="green">Download Review</font></a></td>
+							              				</c:when>
+							              				<c:otherwise>
+															<td><a
+																href="/reviewcomment?name=${sets.userName}&phone=${sets.phone}&email=${sets.emailId}&setName=${sets.setName}"><font
+																	color="green">View Comment</font></a></td>
+														</c:otherwise>
+							              			</c:choose>
 								              	</c:when>
 								              	<c:otherwise>
 										            <td>Review Pending.</td>
-										         </c:otherwise>
-								              </c:choose>
+									         	</c:otherwise>
+						              		</c:choose>
 						            	</tr>
 						            </c:forEach>
 								</thead>

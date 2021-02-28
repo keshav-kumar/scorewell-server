@@ -135,11 +135,11 @@ public class DataHandler {
 
 		logger.debug("Reviewed answer uploading.");
 
-		if (uploadfile.isEmpty() ) {
-			return new ResponseEntity("Please select a file !", HttpStatus.BAD_REQUEST);
+		if (uploadfile.isEmpty() && request.getParameter("reviewComment").isEmpty()) {
+			return new ResponseEntity("Please select a file or put some review comment !", HttpStatus.BAD_REQUEST);
 		}
 
-		questionSetService.updateUserActivity(request);
+		questionSetService.updateUserActivity(request, !uploadfile.isEmpty());
 		
 		try {
 			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "R");
@@ -148,8 +148,7 @@ public class DataHandler {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 
-		return new ResponseEntity("Successfully uploaded - " + uploadfile.getOriginalFilename(), new HttpHeaders(),
-				HttpStatus.OK);
+		return new ResponseEntity("Review saved Successfully", new HttpHeaders(), HttpStatus.OK);
 
 	}
 }

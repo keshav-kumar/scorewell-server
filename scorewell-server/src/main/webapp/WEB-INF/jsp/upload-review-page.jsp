@@ -46,6 +46,14 @@
 			<section id="cta" class="clear"> 
 				<div id="content">
 					<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+					
+						<div class="block clear">
+							<div id="reviewComment">
+								<label><h2>Review Comments : </h2></label>
+								<textarea name="revComment" id="revComment" cols="100" rows="5"></textarea>
+							</div>
+						</div>
+					
 						<div class="one_half first">
 							<input name="userName" id="userName" value="${userAnswerSheet.userName}" size="35" readonly>
 				           	<input name="phone" id="phone" value="${userAnswerSheet.phone}" size="35" readonly>

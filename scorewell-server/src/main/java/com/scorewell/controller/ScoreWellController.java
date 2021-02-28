@@ -19,6 +19,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -128,6 +130,19 @@ public class ScoreWellController {
 		model.addAttribute("sets", activitySetList);
 		
 		return new ModelAndView("setList");
+	}
+	
+	@RequestMapping(value = "/reviewcomment", method = { RequestMethod.GET }, consumes = { "text/plain", "application/*" })
+	public ModelAndView reviewWithCommentController(@RequestParam String name, @RequestParam String phone, @RequestParam String email, @RequestParam String setName, HttpServletRequest request, HttpServletResponse response, Model model) {
+		
+		UserActivity activity = daoService.getUserActivity(name, phone, email, setName);
+		QuestionSet questionSet = daoService.getQuestionSetByName(setName);
+		model.addAttribute("activityDetails", activity);
+		model.addAttribute("questionFile", questionSet.getPdfFileName());
+		
+		System.out.println("User Name : "+name);
+		
+		return new ModelAndView("reviewWithComment");
 	}
 	
 	@RequestMapping(value = { "/login-page" })

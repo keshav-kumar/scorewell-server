@@ -11,6 +11,8 @@ public class UserActivity {
 	private String setName;
 	private String fileName;
 	private String filePath;
+	private String reviewComment;
+	private boolean reviwedUploaded;
 	private boolean evaluated;
 	private long uploadDateTime;
 	private long evaluateDateTime;
@@ -61,8 +63,15 @@ public class UserActivity {
 	public boolean isEvaluated() {
 		return evaluated;
 	}
+	
 	public void setEvaluated(boolean evaluated) {
 		this.evaluated = evaluated;
+	}
+	public String getReviewComment() {
+		return reviewComment;
+	}
+	public void setReviewComment(String reviewComment) {
+		this.reviewComment = reviewComment;
 	}
 	public String getUploadDateTime() {
 		return StringUtils.formatDate(this.uploadDateTime, "dd-MM-yyyy");
@@ -75,6 +84,12 @@ public class UserActivity {
 	}
 	public void setEvaluateDateTime(long evaluateDateTime) {
 		this.evaluateDateTime = evaluateDateTime;
+	}
+	public boolean isReviwedUploaded() {
+		return reviwedUploaded;
+	}
+	public void setReviwedUploaded(boolean reviwedUploaded) {
+		this.reviwedUploaded = reviwedUploaded;
 	}
 
 }

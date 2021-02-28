@@ -18,6 +18,7 @@ function upload_review() {
     var phone = $('#phone').val();
     var email = $('#emailId').val();
     var setName = $('#setName').val();
+    var reviewComment = $('#revComment').val();
     var uploadFileName = $('#fileName').val();
     
     var data = new FormData(form);
@@ -25,6 +26,7 @@ function upload_review() {
 	data.append("name", name);
 	data.append("phone", phone);
 	data.append("email", email);
+	data.append("reviewComment", reviewComment);
 	data.append("fileName", uploadFileName);
     
     $.ajax({

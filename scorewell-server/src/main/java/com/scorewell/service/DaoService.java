@@ -376,16 +376,21 @@ public class DaoService {
 		return userActivityId;
 	}
 	
-	public void updateUserActivity(HttpServletRequest request) {
+	public void updateUserActivity(HttpServletRequest request, boolean reviewUpload) {
 		
 		Map<String, Object> query = new HashMap<>();
 		query.put("userName", request.getParameter("name"));
 		query.put("emailId", request.getParameter("email"));
 		query.put("phone", request.getParameter("phone"));
 		query.put("setName", request.getParameter("setName"));
+
+		System.out.println("Review Comment::");
+		System.out.println("Comment: "+request.getParameter("reviewComment"));
 		
 		Map<String, Object> fieldMap = new HashMap<>();
 		fieldMap.put("evaluated", true);
+		fieldMap.put("reviwedUploaded", reviewUpload); 
+		fieldMap.put("reviewComment", request.getParameter("reviewComment"));
 		mongoDBManager.setField(USER_ACTIVITY, query, fieldMap);
 		
 	}
@@ -482,6 +487,35 @@ public class DaoService {
 					.collect(Collectors.toList());
 			
 			return list;
+		}
+		
+		return null;
+	}
+	
+	public UserActivity getUserActivity(String userName, String phone, String email, String setName) {
+		
+		Map<String, Object> queryParam = new HashMap<>();
+		queryParam.put("userName", userName);
+		queryParam.put("emailId", email);
+		queryParam.put("phone", phone);
+		queryParam.put("setName", setName);
+		
+		System.out.println(userName+" :: "+phone+" :: "+email+"  :: "+setName);
+		
+		Map<String, Object> sortmap = new HashMap<>();
+		sortmap.put("evaluateDateTime", -1);
+		List<Document> documents = mongoDBManager.getObjects(USER_ACTIVITY, 0, -1, queryParam, sortmap);
+//		List<Document> documents = mongoDBManager.getObjects(USER_ACTIVITY, queryParam);
+		
+		System.out.println("REVIEW Only  Mongo DOC : "+documents);
+		
+		if (documents != null) {
+			List<UserActivity> list = documents.stream().map(o -> getDocToClass(o, UserActivity.class))
+					.collect(Collectors.toList());
+			
+			System.out.println("USER ACTIVIT REVIEW Only : "+list);
+			
+			return list.get(0);
 		}
 		
 		return null;
