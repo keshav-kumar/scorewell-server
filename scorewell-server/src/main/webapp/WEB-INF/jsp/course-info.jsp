@@ -46,8 +46,8 @@
 					<li><h1>Daily Answer Writing Initiative</h1></li>
 				</ul>
 			
-			<!-- <br>
-				<h1><B>Achiever’s Batch:</B></h1>
+			<br>
+				<!-- <h1><B>Achiever’s Batch:</B></h1>
 				<ul style="list-style-type:disc;">
 				<li><h1>This is the core group of selected 15 -18 students
 						who have recently completed their graduation or are in their final
@@ -55,13 +55,14 @@
 						all the papers of the exam and it involves intensive answer
 						writing practice, lots of test, regular feedback etc.</h1></li>
 				</ul>
-				<br>
-				<h1><B>Fees:</B></h1>
+				<br> -->
+				<h1><B>Agriculture Test Series &ndash;  Paper2</B></h1>
 				<ul style="list-style-type:disc;">
-				  <li><h1>Rs 10000</h1></li>
+				  <li><h1>Total Number of Tests &ndash; 8 (to be held every Sunday)</h1></li>
+				  <li><h1>Fees : Rs 4000</h1></li>
 				</ul>
 				<br>
-				<h1><B>Daily Answer Writing Initiative:</B></h1>
+				<!-- <h1><B>Daily Answer Writing Initiative:</B></h1>
 				<ul style="list-style-type:disc;">
 				<li><h1>To be announced later.</h1></li>
 				</ul>
@@ -79,38 +80,35 @@
 						and final year marksheet to teamscorewell@gmail.com .</h1></li>
 					<h1>teamscorewell@gmail.com</h1>
 					<h1>Mobile : 8092480750</h1>
-				</ul>
+				</ul> -->
 				<br>
+				<h1><B>Mode of Payment :</B>Deposit the fee in the following Bank account.</h1>
 				<ul style="list-style-type: disc;">
-					<li><h1>
-							<B>Alternate Mode of Payment :</B>Deposit the fee in the following Bank account.
-						</h1></li>
-					
 					<li><h1>
 							<B>Bank Name :</B> Union Bank Of India.
 						</h1></li>
 						
 					<li><h1>
-							<B>A/C Name :</B> Suman Roy
+							<B>A/C Name :</B> Urmila Rai
 						</h1></li>
 					
 					<li><h1>
-							<B>A/C No. :</B> 190010100002412
+							<B>A/C No. :</B> 190010100002324
 						</h1></li>
 						
-					<li><h1>
+					<!-- <li><h1>
 							<B>Branch :</B> Deoghar, Jharkhand
-						</h1></li>
+						</h1></li> -->
 						
 					<li><h1>
-							<B>IFSC Code :</B> ANDB0001900  (It’s all zero after ANDB)
+							<B>IFSC Code :</B> UBIN0819000  (It&apos;s all zero after UBIN0819)
 						</h1></li>
 						
 				</ul>
 				<h1>
 					<B>Note : </B>Send us your receipt/challan slip via email after
 					payment of fee (Transfer/Deposit) to <B>teamscorewell@gmail.com</B>
-				</h1> -->
+				</h1>
 			</section>
 		</div>
 	</div>
