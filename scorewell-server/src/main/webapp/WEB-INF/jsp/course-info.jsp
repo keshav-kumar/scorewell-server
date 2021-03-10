@@ -47,15 +47,9 @@
 				</ul>
 			
 			<br>
-				<!-- <h1><B>Achiever’s Batch:</B></h1>
-				<ul style="list-style-type:disc;">
-				<li><h1>This is the core group of selected 15 -18 students
-						who have recently completed their graduation or are in their final
-						year. They will be given full mentorship in all the stages & in
-						all the papers of the exam and it involves intensive answer
-						writing practice, lots of test, regular feedback etc.</h1></li>
-				</ul>
-				<br> -->
+				<h1><B>Schedule: <a href="pdf/resources/Score_well_Test_Series.pdf" target="_blank"><img src="icon/pdf.png" /> </a></B></h1>
+			<br>
+				
 				<h1><B>Agriculture Test Series &ndash;  Paper2</B></h1>
 				<ul style="list-style-type:disc;">
 				  <li><h1>Total Number of Tests &ndash; 8 (to be held every Sunday)</h1></li>
