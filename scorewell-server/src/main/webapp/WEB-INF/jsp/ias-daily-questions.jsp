@@ -78,9 +78,7 @@
 				<li>Adhere to necessary word limit where required. Can
 					illustrate with suitable facts, diagrams, case studies and relevant
 					examples where required.</li>
-				<li>The program runs on a subscription basis. Student can take
-					subscription upto Mains 2021 to get the maximum advantage. Student
-					can write as many tests as possible and get it evaluated.</li>
+				<li>The program runs on a subscription basis. </li>
 				<li>Fees: Rs 4500 for 90 Days</li>
 			</ul>
 			
