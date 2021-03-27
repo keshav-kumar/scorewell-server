@@ -36,10 +36,7 @@
 			<div class="sdb_holder">
 				<h6>Evaluated Answer Sheets</h6>
 				<form action="/set-list" method="get">
-					<div>
-						<label for="name">Name<span>*</span></label> <input
-							type="text" name="name" id="name" value="" size="22">
-					</div>
+					
 					<div>
 						&nbsp;<label for="name">Phone No. <span>*</span></label> <input
 							type="text" name="phone" id="phone" value="" size="22">
@@ -84,7 +81,7 @@
 				<li>The program runs on a subscription basis. Student can take
 					subscription upto Mains 2021 to get the maximum advantage. Student
 					can write as many tests as possible and get it evaluated.</li>
-				<li>Fees: Rs 15000</li>
+				<li>Fees: Rs 4500 for 90 Days</li>
 			</ul>
 			
 			<div id="gen_study">

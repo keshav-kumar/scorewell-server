@@ -449,9 +449,17 @@ public class DaoService {
 	public List<UserActivity> getUserActivity(HttpServletRequest request) {
 		
 		Map<String, Object> queryParam = new HashMap<>();
-		queryParam.put("userName", request.getParameter("name"));
-		queryParam.put("emailId", request.getParameter("email"));
-		queryParam.put("phone", request.getParameter("phone"));
+		
+//		if(request.getParameter("name")!=null && !request.getParameter("name").isEmpty())
+//			queryParam.put("userName", request.getParameter("name"));
+
+		if(request.getParameter("email")!=null && !request.getParameter("email").isEmpty())
+			queryParam.put("emailId", request.getParameter("email"));
+
+		if(request.getParameter("phone")!=null && !request.getParameter("phone").isEmpty())
+			queryParam.put("phone", request.getParameter("phone"));
+		
+		System.out.println("Search Param : "+queryParam);
 		
 		Map<String, Object> sortmap = new HashMap<>();
 		sortmap.put("uploadDateTime", -1);

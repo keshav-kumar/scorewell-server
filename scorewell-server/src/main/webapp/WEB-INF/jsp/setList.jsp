@@ -28,10 +28,7 @@
 			<div class="sdb_holder">
 				<h6>Evaluated Answer Sheets</h6>
 				<form action="/set-list" method="get">
-					<div>
-						<label for="name">Name<span>*</span></label> <input
-							type="text" name="name" id="name" value="" size="22">
-					</div>
+					
 					<div>
 						&nbsp;<label for="name">Phone No. <span>*</span></label> <input
 							type="text" name="phone" id="phone" value="" size="22">

@@ -6,13 +6,20 @@ import com.scorewell.utils.StringUtils;
 
 public class QuestionSet extends BaseDBObject {
 
-	private String course;
+	private String examinationName;
 	private String setName;
 	private String subjectName;
+	private String course;
 	private String pdfFileName;
 	private List<Question> questions;
 	private long releaseDate;
 	
+	public String getExaminationName() {
+		return examinationName;
+	}
+	public void setExaminationName(String examinationName) {
+		this.examinationName = examinationName;
+	}
 	public String getSetName() {
 		return setName;
 	}
@@ -31,12 +38,6 @@ public class QuestionSet extends BaseDBObject {
 	public void setPdfFileName(String pdfFileName) {
 		this.pdfFileName = pdfFileName;
 	}
-//	public List<String> getQuestions() {
-//		return questions;
-//	}
-//	public void setQuestions(List<String> questions) {
-//		this.questions = questions;
-//	}
 	public String getReleaseDate() {
 		return StringUtils.formatDate(this.releaseDate, "dd-MM-yyyy");
 	}
