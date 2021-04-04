@@ -26,6 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.scorewell.dto.QuestionSet;
 import com.scorewell.service.DaoService;
 import com.scorewell.service.QuestionSetService;
 import com.scorewell.service.UploadService;
@@ -52,15 +53,15 @@ public class DataHandler {
 	@Autowired
 	private QuestionSetService questionSetService;
 
-	@RequestMapping(path = "/find")
-	@ResponseBody
-	public String search() {
-
-//		List<String> list = daoService.getUrlsFromWebpageData();
-		String setName = daoService.getLatestQuestionSetName("IAS", "Agri");
-
-		return new Gson().toJson(setName);
-	}
+//	@RequestMapping(path = "/find")
+//	@ResponseBody
+//	public String search() {
+//
+////		List<String> list = daoService.getUrlsFromWebpageData();
+//		List<QuestionSet> setName = daoService.getLatestQuestionSetName("IAS", "Agri");
+//
+//		return new Gson().toJson(setName);
+//	}
 
 	@RequestMapping(value = { "/save-subscriber" })
 	public @ResponseBody String subscriberPageController(HttpServletRequest request, HttpServletResponse response, Model model) {

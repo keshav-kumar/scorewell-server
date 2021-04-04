@@ -427,7 +427,8 @@ public class DaoService {
 		return null;
 	}
 	
-	public String getLatestQuestionSetName(String course, String subjectName) {
+	private long getLatestReleaseDate(String course, String subjectName) {
+		
 		Map<String, Object> queryParam = new HashMap<>();
 		queryParam.put("course", course);
 		queryParam.put("subjectName", subjectName);
@@ -441,7 +442,29 @@ public class DaoService {
 		if (documents.size()>0 && documents != null) {
 			List<QuestionSet> queList = documents.stream().map(o -> getDocToClass(o, QuestionSet.class))
 					.collect(Collectors.toList());
-			return queList.get(0).getSetName();
+			
+			return queList.get(0).getReleaseDateMillisec();
+		}
+		return 0;
+	}
+	
+	public List<QuestionSet> getLatestQuestionSetName(String course, String subjectName) {
+		Map<String, Object> queryParam = new HashMap<>();
+		queryParam.put("course", course);
+		queryParam.put("subjectName", subjectName);
+		long releaseDate = getLatestReleaseDate(course, subjectName);
+		if(releaseDate != 0)
+			queryParam.put("releaseDate", releaseDate);
+		
+		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, queryParam);
+		
+		if (documents.size()>0 && documents != null) {
+			List<QuestionSet> queList = documents.stream().map(o -> getDocToClass(o, QuestionSet.class))
+					.collect(Collectors.toList());
+			
+			System.out.println("Release Date :  "+queList.get(0).getReleaseDateMillisec());
+
+			return queList;
 		}
 		return null;
 	}

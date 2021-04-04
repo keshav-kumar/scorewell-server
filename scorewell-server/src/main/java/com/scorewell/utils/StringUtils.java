@@ -3,14 +3,20 @@ package com.scorewell.utils;
 import java.security.MessageDigest;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.TimeZone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.scorewell.dto.QuestionSet;
 
 public class StringUtils {
 	
@@ -139,11 +145,17 @@ public class StringUtils {
 		return currency.format(0);
     }
     
-    public static int generateSetNumber(String setName) {
-    	if(setName == null)
+    public static int generateSetNumber(List<QuestionSet> questionSets) {
+    	if(questionSets == null)
     		return 1;
+    	List<Integer> setCount = new ArrayList<Integer>();
+		for (QuestionSet questionSet : questionSets) {
+			setCount.add(Integer.parseInt(questionSet.getSetName()
+					.substring(questionSet.getSetName().lastIndexOf('_') + 1, questionSet.getSetName().length())));
+		}
     	
-    	return Integer.parseInt(setName.substring(setName.lastIndexOf('_')+1, setName.length()))+1;
+		return Collections.max(setCount)+1;
+//    	return Integer.parseInt(setName.substring(setName.lastIndexOf('_')+1, setName.length()))+1;
     	
     }
     

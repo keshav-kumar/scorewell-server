@@ -57,5 +57,8 @@ public class QuestionSet extends BaseDBObject {
 		this.questions = questions;
 	}
 	
+	public long getReleaseDateMillisec() {
+		return this.releaseDate;
+	}
 	
 }
