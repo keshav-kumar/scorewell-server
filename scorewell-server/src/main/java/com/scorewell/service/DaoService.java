@@ -414,6 +414,7 @@ public class DaoService {
 		
 		Map<String, Object> sortmap = new HashMap<>();
 		sortmap.put("releaseDate", -1);
+		sortmap.put("createTime", -1);
 		
 		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, 0, -1, queryParam, sortmap);
 //		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, queryParam);
