@@ -95,7 +95,7 @@
 						</h1></li> -->
 						
 					<li><h1>
-							<B>IFSC Code :</B> UBIN0819000  (It&apos;s all zero after UBIN0819)
+							<B>IFSC Code :</B> ANDB0001900  (It&apos;s all zero after ANDB)
 						</h1></li>
 						
 				</ul>

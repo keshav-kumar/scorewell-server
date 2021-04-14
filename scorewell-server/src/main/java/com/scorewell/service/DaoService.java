@@ -428,14 +428,14 @@ public class DaoService {
 		return null;
 	}
 	
-	private long getLatestReleaseDate(String course, String subjectName) {
+	private long getLatestCreationDate(String course, String subjectName) {
 		
 		Map<String, Object> queryParam = new HashMap<>();
 		queryParam.put("course", course);
 		queryParam.put("subjectName", subjectName);
 		
 		Map<String, Object> sortmap = new HashMap<>();
-		sortmap.put("releaseDate", -1);
+		sortmap.put("createTime", -1);
 		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, 0, 1, queryParam, sortmap);
 		
 		System.out.println("Mongo Result : "+documents.size());
@@ -453,7 +453,7 @@ public class DaoService {
 		Map<String, Object> queryParam = new HashMap<>();
 		queryParam.put("course", course);
 		queryParam.put("subjectName", subjectName);
-		long releaseDate = getLatestReleaseDate(course, subjectName);
+		long releaseDate = getLatestCreationDate(course, subjectName);
 		if(releaseDate != 0)
 			queryParam.put("releaseDate", releaseDate);
 		

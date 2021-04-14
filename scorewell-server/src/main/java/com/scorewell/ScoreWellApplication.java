@@ -17,6 +17,6 @@ public class ScoreWellApplication extends SpringBootServletInitializer
     public static void main( String[] args )
     {
     	SpringApplication.run(ScoreWellApplication.class, args);
-        System.out.println( "Hello World!" );
+        System.out.println( "Scorewell Server started ...!" );
     }
 }
