@@ -22,47 +22,61 @@
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
-		<section id="cta" class="clear">
-		
-		<div class="one_half first">
-		
+	<section id="cta" class="clear">
+
+		<div class="one_third first">
+			<h2 class="heading">
+				<B><font color="blue">Course Name : </font></B> ${questionFile.course}
+			</h2>
 		</div>
-		
+		<div class="one_third">
+			<h2 class="heading">
+				<B><font color="blue">Subject Name : </font></B> ${questionFile.subjectName}
+			</h2>
+		</div>
+		<div class="one_third">
+			<h2 class="heading">
+				<B><font color="blue">Set Name :</font></B> ${questionFile.setName}
+			</h2>
+		</div>
+	</section>
+
+	<section id="cta" class="clear">
 		<div class="one_half first">
 			<h2 class="heading">
 				<font color="blue"><B>Question Set : </B></font>
-				<a type='button' href="download/question/file/${questionFile}" class="add_question_button" target="_blank">Download File</a>
+				<ol>
+					<c:forEach var="questionDetail" items="${questionFile.questions}">
+						<li style="font-size: 20px";><h1>${questionDetail.question}</h1></li>
+					</c:forEach>
+				</ol>
 			</h2>
 			<h2 class="heading">
-				<font color="blue"><B>Answer : </B></font>
-				<%-- <a href="pdf/question/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a> --%>
-				<input type="hidden" id="fileName" value="${queSet.pdfFileName}">
-				<a type='button' href="download/answer/file/${activityDetails.phone}_${activityDetails.emailId}_${activityDetails.fileName}" class="add_question_button" target="_blank">Download File</a>
+				<font color="blue"><B>Answer : </B></font> 
+				<a href="download/answer/file/${activityDetails.fileName}" target="_blank"><font color="black">Click To Download</font></a>
 			</h2>
-			
+
 			<c:choose>
 				<c:when test="${activityDetails.reviwedUploaded == true }">
 					<h2 class="heading">
 						<font color="blue"><B>Reviewed : </B></font>
-						<%-- <a href="pdf/question/${queSet.pdfFileName}" target="_blank"><img src="icon/pdf.png" /> </a> --%>
-						<input type="hidden" id="fileName" value="${queSet.pdfFileName}">
-						<a type='button' href="download/reviewed/file/${activityDetails.phone}_${activityDetails.emailId}_${activityDetails.fileName}" class="add_question_button" target="_blank">Download File</a>
+						<a href="download/reviewed/file/${activityDetails.fileName}" target="_blank"><font color="black">Click To Download</font></a>
 					</h2>
 				</c:when>
-			
+
 			</c:choose>
-			
+
 		</div>
-		</section>
-		
-		<div class="wrapper content">
+	</section>
+
+	<!-- <div class="wrapper content"> -->
 			<section id="cta" class="clear"> 
-				<label><h2>Review Comments : </h2></label>
+				<label><h2><B><font color="blue">Review Comments :</font></B> </h2></label>
 				<ol>
 					<li style="font-size:20px";><h1>${activityDetails.reviewComment}</h1></li>
 				</ol>
 			</section>
-		</div>
+		<!-- </div> -->
 		
 	</div>
 	<!-- ################################################################################################ -->

@@ -14,6 +14,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -36,6 +38,8 @@ import com.scorewell.dto.UserActivity;
 @Controller
 public class ScoreWellController {
 
+	private final Logger logger = LoggerFactory.getLogger(ScoreWellController.class);
+	
 	@Autowired private Environment env;
 	@Autowired private ScorewellService scorewellService;
 	@Autowired private DaoService daoService;
@@ -72,15 +76,14 @@ public class ScoreWellController {
 		return new ModelAndView("career");
 	}
 	
-	@RequestMapping(value = { "/ias-daily-questions" })
+	@RequestMapping(value = { "/daily-questions" })
 	public ModelAndView iasDailyQuestionPageController(HttpServletRequest request, HttpServletResponse response, Model model) {
 		System.out.println("Welcome to About Section");
 
-		List<QuestionSet> questionSets = daoService.getQuestionSet(request.getParameter("course"));
-		
+		List<QuestionSet> questionSets = daoService.getQuestionSet(request);
 		model.addAttribute("questionSets", questionSets);
 		
-		return new ModelAndView("ias-daily-questions");
+		return new ModelAndView("daily-questions");
 	}
 	
 	@RequestMapping(value = { "/question-set" })
@@ -138,7 +141,7 @@ public class ScoreWellController {
 		UserActivity activity = daoService.getUserActivity(name, phone, email, setName);
 		QuestionSet questionSet = daoService.getQuestionSetByName(setName);
 		model.addAttribute("activityDetails", activity);
-		model.addAttribute("questionFile", questionSet.getPdfFileName());
+		model.addAttribute("questionFile", questionSet);
 		
 		System.out.println("User Name : "+name);
 		

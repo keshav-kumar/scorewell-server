@@ -46,7 +46,7 @@
 				<!-- ################################################################################################ -->
 				<figcaption class="borderedbox inspace-30 bg-white">
 					<h2 class="heading">
-						<a href="/ias-daily-questions?course=IAS"><font color="red"><B>Answer Writing Program</B></font></a>
+						<a href="/daily-questions?course=IAS"><font color="red"><B>Answer Writing Program</B></font></a>
 					</h2>
 
 					<!-- <a href="#"><img class="borderedbox inspace-10 btmspace-10"

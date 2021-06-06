@@ -29,7 +29,7 @@ public class QuestionSetService {
 	@Autowired
 	private DaoService daoService;
 
-	public String createQuestionSet(HttpServletRequest request, String pdfFileName) {
+	public String createQuestionSet(HttpServletRequest request) {//, String pdfFileName) {
 
 		QuestionSet questionSet = new QuestionSet();
 
@@ -61,7 +61,7 @@ public class QuestionSetService {
 //		questions.add(question1);
 		
 		questionSet.setQuestions(questions);
-		questionSet.setPdfFileName(pdfFileName);
+//		questionSet.setPdfFileName(pdfFileName);
 
 		questionSet.setCreateTime(System.currentTimeMillis());
 		questionSet.setUpdateTime(System.currentTimeMillis());
@@ -70,16 +70,17 @@ public class QuestionSetService {
 		return daoService.createQuestionSet(questionSet);
 	}
 	
-	public String saveUserActivity(HttpServletRequest request, String fileDir) {
+	public String saveUserActivity(HttpServletRequest request, String filePath) {
 		
 		UserActivity userActivity = new UserActivity();
 		userActivity.setUserName(request.getParameter("name"));
 		userActivity.setEmailId(request.getParameter("email"));
 		userActivity.setPhone(request.getParameter("phone"));
-		userActivity.setCourse(request.getParameter("course"));
+		userActivity.setCourse(request.getParameter("courseName"));
+		userActivity.setSubjectName(request.getParameter("subjectName"));
 		userActivity.setSetName(request.getParameter("setName"));
-		userActivity.setFileName(request.getParameter("fileName"));
-		userActivity.setFilePath(fileDir);
+		userActivity.setFileName(filePath.substring(filePath.lastIndexOf("/")+1));
+		userActivity.setFilePath(filePath);
 		userActivity.setReviwedUploaded(false);
 		userActivity.setEvaluated(false);
 		userActivity.setUploadDateTime(System.currentTimeMillis());

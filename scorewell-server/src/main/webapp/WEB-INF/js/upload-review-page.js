@@ -28,6 +28,7 @@ function upload_review() {
 	data.append("email", email);
 	data.append("reviewComment", reviewComment);
 	data.append("fileName", uploadFileName);
+	data.append("setName", setName);
     
     $.ajax({
         type: "POST",

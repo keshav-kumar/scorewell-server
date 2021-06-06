@@ -92,10 +92,10 @@
 					<textarea name="que1" id="que1" cols="100" rows="3"></textarea> -->
 				</div>
 				
-				<div class="block clear">
+				<!-- <div class="block clear">
 					&nbsp;<label for="upload">Upload <span>*</span></label> <input
 						id="upload" type="file" name="file" value="Upload File">
-				</div>
+				</div> -->
 				<div>
 					&nbsp; <input type="submit" value="Submit" id="submit" class="orange_button"> <span
 						id="result"></span>

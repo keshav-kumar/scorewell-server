@@ -76,24 +76,23 @@ public class DataHandler {
 	}
 	
 	@PostMapping("/api/create-question-set")
-	public ResponseEntity<?> uploadQuestions(HttpServletRequest request, HttpServletResponse response,
-			@RequestParam("file") MultipartFile uploadfile) {
+	public ResponseEntity<?> uploadQuestions(HttpServletRequest request, HttpServletResponse response){
+//			,@RequestParam("file") MultipartFile uploadfile) {
 
 		logger.debug("Single file upload!");
 
-		if (uploadfile.isEmpty()) {
-			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
-		}
-		String questionsetId = questionSetService.createQuestionSet(request, uploadfile.getOriginalFilename());
-		try {
-			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "Q");
+//		if (uploadfile.isEmpty()) {
+//			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
+//		}
+		String questionsetId = questionSetService.createQuestionSet(request);//, uploadfile.getOriginalFilename());
+//		try {
+//			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "Q");
+//
+//		} catch (IOException e) {
+//			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//		}
 
-		} catch (IOException e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-
-		return new ResponseEntity("Successfully uploaded - " + uploadfile.getOriginalFilename(), new HttpHeaders(),
-				HttpStatus.OK);
+		return new ResponseEntity("Question saved successfully.", new HttpHeaders(), HttpStatus.OK);
 
 	}
 	
@@ -109,21 +108,12 @@ public class DataHandler {
 	public ResponseEntity<?> uploadAnswer(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("file") MultipartFile uploadfile) {
 
-		logger.debug("Single file upload!");
-
 		if (uploadfile.isEmpty()) {
 			return new ResponseEntity("please select a file!", HttpStatus.BAD_REQUEST);
 		}
-
-		String questionsetId = questionSetService.saveUserActivity(request,
-				env.getProperty("resources.dir") + env.getProperty("upload.answer.dir"));
-		try {
-
-			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "A");
-
-		} catch (IOException e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		
+		String savedFilePath = uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "A");
+		String questionsetId = questionSetService.saveUserActivity(request, savedFilePath);
 
 		return new ResponseEntity("Successfully uploaded - " + uploadfile.getOriginalFilename(), new HttpHeaders(),
 				HttpStatus.OK);
@@ -134,20 +124,14 @@ public class DataHandler {
 	public ResponseEntity<?> uploadReviewed(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("file") MultipartFile uploadfile) {
 
-		logger.debug("Reviewed answer uploading.");
+		logger.info("Reviewed answer uploading.");
 
 		if (uploadfile.isEmpty() && request.getParameter("reviewComment").isEmpty()) {
 			return new ResponseEntity("Please select a file or put some review comment !", HttpStatus.BAD_REQUEST);
 		}
 
 		questionSetService.updateUserActivity(request, !uploadfile.isEmpty());
-		
-		try {
-			uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "R");
-
-		} catch (IOException e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		String savedFilePath = uploadService.saveUploadedPdfFiles(Arrays.asList(uploadfile), request, "R");
 
 		return new ResponseEntity("Review saved Successfully", new HttpHeaders(), HttpStatus.OK);
 

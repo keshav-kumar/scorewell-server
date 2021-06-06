@@ -26,9 +26,9 @@
 			<h6>Course List</h6>
 			<nav class="sdb_holder">
 			<ul>
-				<li><a href="#gen_study">General studies</a></li>
-				<li><a href="#">Essay</a></li>
-				<li><a href="#">Agriculture</a></li>
+				<li><a href="/admin?course=IAS&subject=Agri">Agriculture</a></li>
+				<li><a href="/admin?course=IAS&subject=GS">General studies</a></li>
+				<!-- <li><a href="#">Essay</a></li> -->
 			</ul>
 			</nav>
 			

@@ -23,21 +23,23 @@
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<section id="cta" class="clear">
-			
-			<div class="one_half first">
+			<div class="one_third first">
 				<h2 class="heading">
-					<font color="red"><B>Question Sheet : ${questionSet.setName}</B></font>
-					<%-- <a href="pdf/question/${userAnswerSheet.fileName}" target="_blank"><img src="icon/pdf.png" /> </a> --%>
-					<a type='button' href="download/question/file/${userAnswerSheet.fileName}" class="add_question_button" target="_blank">Download File</a>
-				</h2>
-				<br></br>
-			</div>
-			<div class="one_half">
-				<h2 class="heading">
-					<font color="green"><B>Answer Sheet : ${questionSet.setName}</B></font>
-					 <%-- <a href="/pdf/answer/${userAnswerSheet.phone}_${userAnswerSheet.emailId}_${userAnswerSheet.fileName}" target="_blank"><img src="icon/pdf.png" /> </a> --%>
-					 <a type='button' href="download/answer/file/${userAnswerSheet.phone}_${userAnswerSheet.emailId}_${userAnswerSheet.fileName}" class="add_question_button" target="_blank">Download File</a>
+					<font color="green"><B>Course Name : ${userAnswerSheet.course}</B></font>
 					
+				</h2>
+			</div>
+			<div class="one_third">
+				<h2 class="heading">
+					<font color="green"><B>Subject Name : ${userAnswerSheet.subjectName}</B></font>
+					
+				</h2>
+			</div>
+			<div class="one_third">
+				<h2 class="heading">
+					<font color="green">
+						<B>Answer Sheet : <a type='button' href="download/answer/file/${userAnswerSheet.fileName}" class="add_question_button" target="_blank">${userAnswerSheet.setName}</a></B>
+					</font>
 				</h2>
 			</div>
 		</section>

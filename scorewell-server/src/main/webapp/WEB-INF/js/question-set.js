@@ -14,17 +14,21 @@ function upload_answer() {
     var name = $('#name').val();
     var phone = $('#phone').val();
     var email = $('#email').val();
-    var fileName = $('#fileName').val();
+    var courseName = $('#courseName').val();
+    var subjectName = $('#subjectName').val();
+    var setName = $('#setName').val();
     
     var data = new FormData(form);
     
 	data.append("name", name);
 	data.append("phone", phone);
 	data.append("email", email);
-	data.append("fileName", fileName);
+	data.append("courseName", courseName);
+	data.append("subjectName", subjectName);
+	data.append("setName", setName);
 
     if(name ==="" || phone === "" || email === ""){
-    	$("#result").text("please fille the data.");
+    	$("#result").text("please fill the data.");
     }else{
     
     $.ajax({

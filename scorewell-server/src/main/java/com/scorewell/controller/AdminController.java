@@ -60,7 +60,7 @@ public class AdminController {
 	public ModelAndView adminPageController(HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		List<QuestionSet> questionSets = daoService.getQuestionSet("IAS");
+		List<QuestionSet> questionSets = daoService.getQuestionSet(request);
 		model.addAttribute("questionSets", questionSets);
 		
 		return new ModelAndView("admin-questions");
@@ -87,11 +87,18 @@ public class AdminController {
 	public ModelAndView uploadReviewPageController(HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
+//		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
 		
-		System.out.println("Name : "+request.getParameter("userName"));
+		UserActivity listAnswerSheet = new UserActivity();
+		listAnswerSheet.setSetName(request.getParameter("setName"));
+		listAnswerSheet.setPhone(request.getParameter("phone"));
+		listAnswerSheet.setEmailId(request.getParameter("emailId"));
+		listAnswerSheet.setUserName(request.getParameter("userName"));
+		listAnswerSheet.setCourse(request.getParameter("courseName"));
+		listAnswerSheet.setSubjectName(request.getParameter("subjectName"));
+		listAnswerSheet.setFileName(request.getParameter("fileName"));
 		
-		List<UserActivity> listAnswerSheet = daoService.getUserActivityAdmin(request);
-		model.addAttribute("userAnswerSheet", listAnswerSheet.get(0));
+		model.addAttribute("userAnswerSheet", listAnswerSheet);
 		
 		return new ModelAndView("upload-review-page");
 	}

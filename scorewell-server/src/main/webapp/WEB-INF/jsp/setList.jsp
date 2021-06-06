@@ -69,12 +69,12 @@
 				            			<tr>
 				            				<td>${sets.userName}</td>
 							              	<td>${sets.setName}</td>
-							              	<td><a type='button' href="download/answer/file/${sets.phone}_${sets.emailId}_${sets.fileName}" class="add_question_button" target="_blank">Download Answer</a></td>
+							              	<td><a type='button' href="download/answer/file/${sets.fileName}" class="add_question_button" target="_blank">Download Answer</a></td>
 						              		<c:choose>
 							              		<c:when test="${sets.evaluated == true }">
 							              			<c:choose>
 							              				<c:when test="${empty sets.reviewComment}">
-							              				<td><a type='button' href="download/reviewed/file/${sets.phone}_${sets.emailId}_${sets.fileName}" class="add_question_button" target="_blank"><font color="green">Download Review</font></a></td>
+							              				<td><a type='button' href="download/reviewed/file/${sets.fileName}" class="add_question_button" target="_blank"><font color="green">Download Review</font></a></td>
 							              				</c:when>
 							              				<c:otherwise>
 															<td><a

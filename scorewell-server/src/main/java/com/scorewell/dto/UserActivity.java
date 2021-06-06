@@ -8,6 +8,7 @@ public class UserActivity {
 	private String emailId;
 	private String phone;
 	private String course;
+	private String subjectName;
 	private String setName;
 	private String fileName;
 	private String filePath;
@@ -90,6 +91,12 @@ public class UserActivity {
 	}
 	public void setReviwedUploaded(boolean reviwedUploaded) {
 		this.reviwedUploaded = reviwedUploaded;
+	}
+	public String getSubjectName() {
+		return subjectName;
+	}
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
 
 }

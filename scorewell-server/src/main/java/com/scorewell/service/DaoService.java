@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,7 @@ import com.scorewell.dto.Question;
 import com.scorewell.dto.QuestionSet;
 import com.scorewell.utils.AppUtils;
 import com.scorewell.utils.MongoUtils;
+import com.scorewell.controller.ScoreWellController;
 import com.scorewell.db.MongoDBManager;
 import com.scorewell.dto.User;
 import com.scorewell.dto.UserActivity;
@@ -36,6 +39,8 @@ import com.scorewell.utils.StringUtils;
 @Service
 public class DaoService {
 
+	private final Logger logger = LoggerFactory.getLogger(DaoService.class);
+	
 	private static String USER_INFO_COLLECTION = "user_info";
 	private static String USER_ROLE_INFO_COLLECTION = "user_role_info";
 	private static String USER_SESSION_COLLECTION = "user_session";
@@ -384,7 +389,7 @@ public class DaoService {
 		query.put("phone", request.getParameter("phone"));
 		query.put("setName", request.getParameter("setName"));
 
-		System.out.println("Review Comment::");
+		System.out.println("Review Comment:: for setName :->"+request.getParameter("setName"));
 		System.out.println("Comment: "+request.getParameter("reviewComment"));
 		
 		Map<String, Object> fieldMap = new HashMap<>();
@@ -395,17 +400,19 @@ public class DaoService {
 		
 	}
 	
-	public List<QuestionSet> getQuestionSet(String course) {
-
+	public List<QuestionSet> getQuestionSet(HttpServletRequest request) {
+		
 		Map<String, Object> queryParam = new HashMap<>();
-		queryParam.put("course", course);
-//		queryParam.put("subjectName", subjectName);
 		queryParam.put("deleted", false);
+		
+		if(request.getParameter("course")!=null && !request.getParameter("course").isEmpty())
+			queryParam.put("course", request.getParameter("course"));
+		if(request.getParameter("subject")!=null && !request.getParameter("subject").isEmpty())
+			queryParam.put("subjectName", request.getParameter("subject"));
 
 		Map timeConstraint = new HashMap();
 //		long today = StringUtils
 //				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy"), "dd-MM-yyyy").getTime();
-		
 		long today = StringUtils
 				.strToDate(StringUtils.formatDate(System.currentTimeMillis(), "dd-MM-yyyy HH:mm:ss"), "dd-MM-yyyy HH:mm:ss").getTime();
 		
@@ -417,8 +424,7 @@ public class DaoService {
 		sortmap.put("createTime", -1);
 		
 		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, 0, -1, queryParam, sortmap);
-//		List<Document> documents = mongoDBManager.getObjects(QUESTION_SET, queryParam);
-		System.out.println("Mongo Result : "+documents.size());
+		logger.info("Mongo Result size : {}",documents.size());
 		if (documents != null) {
 			List<QuestionSet> list = documents.stream().map(o -> getDocToClass(o, QuestionSet.class))
 					.collect(Collectors.toList());

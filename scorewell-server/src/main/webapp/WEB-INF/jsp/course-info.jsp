@@ -49,11 +49,10 @@
 			<br>
 				<h1><B>Schedule: <a href="pdf/resources/Score_well_Test_Series.pdf" target="_blank"><img src="icon/pdf.png" /> </a></B></h1>
 			<br>
-				
 				<h1><B>Agriculture Test Series</B></h1>
 				<ul style="list-style-type:disc;">
 				  <li><h1>Total Number of Tests &ndash; 10</h1></li>
-				  <li><h1>Fees : Rs 3000</h1></li>
+				  <li><h1>Fees : ₹12,500/-</h1></li>
 				</ul>
 				<br>
 				<!-- <h1><B>Daily Answer Writing Initiative:</B></h1>
@@ -95,7 +94,7 @@
 						</h1></li> -->
 						
 					<li><h1>
-							<B>IFSC Code :</B> ANDB0001900  (It&apos;s all zero after ANDB)
+							<B>IFSC Code :</B> UBIN0819000  (It&apos;s all zero after UBIN)
 						</h1></li>
 						
 				</ul>
